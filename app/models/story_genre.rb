@@ -1,0 +1,2 @@
+class StoryGenre < ApplicationRecord
+end
