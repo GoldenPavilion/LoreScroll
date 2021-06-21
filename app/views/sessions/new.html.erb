@@ -1,5 +1,11 @@
 <h1>Sign In</h1>
 
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
+
 <%= form_tag("/signin", method: "post") do %>
     <label>Username: </label>
     <input type="text" id="username" name="username"><br>
