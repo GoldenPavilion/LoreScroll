@@ -4,3 +4,5 @@
 ---Created Migrations and Schema
 ---Set Up Associations
 
+6/19
+---Set up basic signup structure
