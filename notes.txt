@@ -1,0 +1,6 @@
+6/18
+---Completed Planning
+---Added Preliminary Models
+---Created Migrations and Schema
+---Set Up Associations
+
