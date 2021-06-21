@@ -6,3 +6,6 @@
 
 6/19
 ---Set up basic signup structure
+---Set up basic login/logout structure
+---User can sign up for an account, login to that account and log out of that account
+
