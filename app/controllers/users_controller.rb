@@ -9,7 +9,8 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-            render '/users/new'
+            flash[:notice] = "Something went wrong. Try again!"
+            redirect_to new_user_path
         end
     end
 
