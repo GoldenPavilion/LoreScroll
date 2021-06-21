@@ -2,12 +2,14 @@
 
 <%= form_for @user do |f| %>
     <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username %><br><br>
+    <%= f.label :author_name %>
+    <%= f.text_field :author_name %><br><br>
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br><br>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password %><br><br>
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br><br>
     <%= submit_tag "Create Author" %>
 <% end %>
