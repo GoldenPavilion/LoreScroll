@@ -3,9 +3,6 @@ class WorldsController < ApplicationController
     def index
     end
 
-    def show
-    end
-
     def new
         @world = World.new
     end
@@ -18,6 +15,11 @@ class WorldsController < ApplicationController
             redirect_to new_world_path
         end
     end
+
+    def show
+        @world = World.find_by(id: params[:id]) 
+    end
+
 
     def edit
     end

@@ -1,3 +1,7 @@
 <h1>Build A World</h1>
-
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
 <%= render 'form' %>
