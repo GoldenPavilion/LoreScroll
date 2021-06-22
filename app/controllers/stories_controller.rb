@@ -9,14 +9,17 @@ class StoriesController < ApplicationController
 
     def create
         @story = Story.new(story_params)
+        #Why am I not saving?
         if @story.save
             redirect_to story_path(@story)
         else
+            flash[:notify] = "Something went wrong. Try again!"
             redirect_to new_story_path
         end
     end
 
     def show
+        @story = Story.find_by_id(params[:id])
     end
 
     def edit

@@ -1,2 +1,7 @@
 <h1>Tell A Story</h1>
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
 <%= render 'form' %>
