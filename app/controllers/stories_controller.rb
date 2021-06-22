@@ -8,6 +8,7 @@ class StoriesController < ApplicationController
     end
 
     def create
+        @story = Create.new(story_params)
     end
 
     def show
@@ -17,6 +18,12 @@ class StoriesController < ApplicationController
     end
 
     def update
+    end
+
+    private
+
+    def story_params
+        params.require(:story).permit(:title, :summary)
     end
 
 end
