@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   delete '/signout' => 'sessions#destroy'
 
   resources :stories
+  resources :worlds
 end
