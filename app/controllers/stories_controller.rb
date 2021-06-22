@@ -9,7 +9,6 @@ class StoriesController < ApplicationController
 
     def create
         @story = Story.new(story_params)
-        binding.pry
         #Why am I not saving?
         if @story.save
             redirect_to story_path(@story)
