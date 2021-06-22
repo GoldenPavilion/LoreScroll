@@ -8,7 +8,12 @@ class StoriesController < ApplicationController
     end
 
     def create
-        @story = Create.new(story_params)
+        @story = Story.new(story_params)
+        if @story.save
+            redirect_to story_path(@story)
+        else
+            redirect_to new_story_path
+        end
     end
 
     def show
