@@ -7,7 +7,7 @@ class WorldsController < ApplicationController
     end
 
     def new
-        @user = User.new
+        @world = World.new
     end
 
     def create
