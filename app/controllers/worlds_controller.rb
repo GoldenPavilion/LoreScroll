@@ -9,7 +9,7 @@ class WorldsController < ApplicationController
 
     def create
         @world = World.new(world_params)
-        if @save
+        if @world.save
             redirect_to world_path(@world)
         else
             flash[:notice] = "Something stopped your Big Bang. Try again!"

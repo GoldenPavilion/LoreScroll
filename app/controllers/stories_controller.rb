@@ -9,7 +9,6 @@ class StoriesController < ApplicationController
 
     def create
         @story = current_user.stories.build(story_params)
-        #Why am I not saving?
         if @story.save
             redirect_to story_path(@story)
         else
@@ -27,6 +26,9 @@ class StoriesController < ApplicationController
     end
 
     def update
+        @story = @story = Story.find_by_id(params[:id])
+        @story.update(story_params)
+        redirect_to story_path(@story)
     end
 
     private

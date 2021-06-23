@@ -11,5 +11,8 @@
 ---Added Story Controller and basic actions
 
 6/22
----Tried to fix create method in StoryController, but Story object still won't save. Moving onto another model for now. 
- 
+---Tried to fix create method in StoriesController, but Story object still won't save. Moving onto another model for now. 
+---Started work on WorldsController and views. World won't create - won't assign id. 
+---Fixed issue with StoriesController. User can create, edit and show a story!
+
+
