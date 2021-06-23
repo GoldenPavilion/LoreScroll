@@ -1,0 +1,21 @@
+<%= form_for @character do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name %><br>
+    <%= f.label :role, "Role: " %>
+    <%= f.select :role, options_for_select([["Protagonist", 1], ["Antagonist", 2], ["Main Character", 3], ["Supporting Character", 4], ["Tertiary Character", 5], ["Single Appearance", 6], ["Mentioned", 7]]) %><br>
+    <%= f.label :age, "Age: " %>
+    <%= f.number_field :age %><br>
+    <%= f.label :gender, "Gender: " %>
+    <%= f.select :gender, options_for_select([["Female", 1], ["Male", 2], ["Non-Binary", 3], ["Other", 4]]) %><br>
+    <%= f.label :species, "Species: " %>
+    <%= f.text_field :species %><br>
+    <%= f.label :job, "Job: " %>
+    <%= f.text_field :job %><br>
+    <%= f.label :physical, "Physical Description: " %><br>
+    <%= f.text_area :physical %><br>
+    <%= f.label :description, "Description: " %><br>
+    <%= f.text_area :description %><br>
+    <%= f.label :motivation, "Motivations: " %><br>
+    <%= f.text_area :motivation %><br>
+    <%= submit_tag "Create Character" %>
+<% end %>
