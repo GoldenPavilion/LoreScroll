@@ -1,6 +1,6 @@
 class Story < ApplicationRecord
-    belongs_to :user, optional: true
-    belongs_to :world, optional: true
+    belongs_to :user 
+    belongs_to :world 
     has_many :story_genres
     has_many :genres, through: :story_genres
 end

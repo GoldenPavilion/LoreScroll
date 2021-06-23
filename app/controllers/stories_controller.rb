@@ -11,7 +11,6 @@ class StoriesController < ApplicationController
         @story = current_user.stories.build(story_params)
         #Why am I not saving?
         if @story.save
-            binding.pry
             redirect_to story_path(@story)
         else
             flash[:notify] = "Something went wrong. Try again!"
