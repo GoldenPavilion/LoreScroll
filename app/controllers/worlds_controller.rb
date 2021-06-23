@@ -23,7 +23,7 @@ class WorldsController < ApplicationController
 
 
     def edit
-        @story = Story.find_by_id(params[:id])
+        @world = World.find_by(id: params[:id])
     end
 
     def update
