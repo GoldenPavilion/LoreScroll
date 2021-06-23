@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
     end
 
     def create
-        @story = Story.new(story_params)
+        @story = current_user.stories.build(story_params)
         #Why am I not saving?
         if @story.save
             redirect_to story_path(@story)
