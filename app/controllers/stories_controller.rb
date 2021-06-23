@@ -23,6 +23,7 @@ class StoriesController < ApplicationController
     end
 
     def edit
+        @story = Story.find_by_id(params[:id])
     end
 
     def update
