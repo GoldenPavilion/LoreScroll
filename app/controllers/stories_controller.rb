@@ -26,7 +26,7 @@ class StoriesController < ApplicationController
     end
 
     def update
-        @story = @story = Story.find_by_id(params[:id])
+        @story = Story.find_by_id(params[:id])
         @story.update(story_params)
         redirect_to story_path(@story)
     end

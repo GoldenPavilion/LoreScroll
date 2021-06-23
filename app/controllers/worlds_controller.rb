@@ -27,6 +27,9 @@ class WorldsController < ApplicationController
     end
 
     def update
+        @world = World.find_by(id: params[:id])
+        @world.update(world_params)
+        redirect_to world_path(@world)
     end
 
     private
