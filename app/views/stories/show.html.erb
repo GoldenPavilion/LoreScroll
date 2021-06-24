@@ -1,6 +1,7 @@
 <h1><%= @story.title %></h1>
+<h5>by <%= @story.user.author_name %>
 
-<h3>Setting: <%= @story.world.name %></h3>
+<h3>Setting: <%= link_to @story.world.name, world_path(@story.world) %></h3>
 
 <p><%= @story.summary %></p><br>
 
