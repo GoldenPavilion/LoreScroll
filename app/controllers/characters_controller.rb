@@ -12,6 +12,7 @@ class CharactersController < ApplicationController
     end
 
     def show
+        @character = Character.find_by(id: params[:id])
     end
 
     def edit
