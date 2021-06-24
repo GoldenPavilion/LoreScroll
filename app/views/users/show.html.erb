@@ -10,4 +10,12 @@ If you're brand new to LoreScroll, start by setting up your world.
 <p><%= link_to "Tell Your Story", new_story_path %></p>
 <p><%= link_to "Add A Character", new_character_path %></p>
 <br>
+
+<h3>Your Worlds</h3>
+<% @user.worlds.each do |w| %>
+    <%= w.name %><br>
+<% end %>
+
+
+
 <p><%= link_to "Log Out", signout_path, method: "delete" %></p>
