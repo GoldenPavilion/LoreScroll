@@ -23,5 +23,106 @@ World.create(name: "A Galaxy, Far, Far Away", scale: "Galaxy", description: "A m
 World.create(name: "New York 1985", scale: "City", description: "An alternate universe where Richard Nixon is still president and New York City is crumbling under his policies.")
 World.create(name: "London, The Near Future", scale: "City", description: "A dystopian London ruled over by an iron-gripped authoritarian rule.")
 
+Character.create(
+    world_id: 1,
+    name: "Jon Snow",
+    role: "Main Character",
+    age: 19,
+    gender: "Male",
+    species: "N/A",
+    job: "Night's Watch",
+    physical: "Handsome",
+    description: "Brooding",
+    motivation: "But who is my mom?"
+)
 
+Character.create(
+    world_id: 1,
+    name: "Lady Brienne",
+    role: "Supporting Character",
+    age: 32,
+    gender: "Female",
+    species: "N/A",
+    job: "Knight and Warrior",
+    physical: "Enormous and imposing, but beautiful.",
+    description: "Noble",
+    motivation: "To become a real knight."
+)
 
+Character.create(
+    world_id: 2,
+    name: "Thane Krios",
+    role: "Supporting Character",
+    age: 45,
+    gender: "Male",
+    species: "Grell",
+    job: "Master Assasin",
+    physical: "Lythe and Agile",
+    description: "Reverant",
+    motivation: "To achieve penance for the deaths he caused."
+)
+
+Character.create(
+    world_id: 2,
+    name: "Liara T'soni",
+    role: "Main Character",
+    age: 106,
+    gender: "Non-Binary",
+    species: "Asari",
+    job: "Architect and Information Broker",
+    physical: "Bookish, but lovely.",
+    description: "Socially awkward and obsessive over knowledge.",
+    motivation: "To learn more about the Protheans."
+)
+
+Character.create(
+    world_id: 3,
+    name: "Darth Vader",
+    role: "Antagonist",
+    age: 45,
+    gender: "Male",
+    species: "Unknown",
+    job: "Dark Lord of the Sith",
+    physical: "Terrifying mask, long cape, imposing.",
+    description: "Stoic, Violent, Unforgiving",
+    motivation: "Destroy the Rebels."
+)
+
+Character.create(
+    world_id: 3,
+    name: "Han Solo",
+    role: "Supporting Character",
+    age: 32,
+    gender: "Male",
+    species: "Human",
+    job: "Smuggler",
+    physical: "Tall, handsome, roguish.",
+    description: "Selfish,  but kind.",
+    motivation: "Pay off Jabba the Hutt."
+)
+
+Character.create(
+    world_id: 4,
+    name: "Night Owl",
+    role: "Main Character",
+    age: 53,
+    gender: "Male",
+    species: "N/A",
+    job: "Retired Superhero",
+    physical: "Round-faced and unkept.",
+    description: "Sad and longing for the old days.",
+    motivation: "Keep his head down and go unnoticed."
+)
+
+Character.create(
+    world_id: 5,
+    name: "Evie",
+    role: "Protagonist",
+    age: 26,
+    gender: "Female",
+    species: "N/A",
+    job: "Production Assistant for the Local News",
+    physical: "Petite and pretty.",
+    description: "Naive, but strong.",
+    motivation: "To survive her day to day existence."
+)
