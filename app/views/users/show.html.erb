@@ -13,9 +13,14 @@ If you're brand new to LoreScroll, start by setting up your world.
 
 <h3>Your Worlds</h3>
 <% @user.worlds.each do |w| %>
-    <%= w.name %><br>
+    <%= link_to w.name, world_path(w) %><br>
 <% end %>
+<br>
 
-
+<h3>Your Stories</h3>
+<% @user.stories.each do |s| %>
+    <%= link_to s.title, story_path(s) %><br>
+<% end %>
+<br>
 
 <p><%= link_to "Log Out", signout_path, method: "delete" %></p>
