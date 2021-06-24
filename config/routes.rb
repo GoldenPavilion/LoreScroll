@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   resources :stories
   resources :worlds
-  resources :characters
+  resources :worlds, only: [:show] do
+    resources :characters 
+  end
 end
