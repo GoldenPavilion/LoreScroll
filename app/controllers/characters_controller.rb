@@ -31,6 +31,10 @@ class CharactersController < ApplicationController
     end
 
     def update
+        @character = Character.find_by(id: params[:id])
+        @character.update(character_params)
+        @world = World.find_by(id: @character.world_id)
+        redirect_to world_character_path(@world, @character)
     end
 
     private
