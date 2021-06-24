@@ -14,6 +14,12 @@ class CharactersController < ApplicationController
 
     def create
         @character = Character.new(character_params)
+        @world = World.find_by(id: @character.world_id)
+        if @character.save
+            redirect_to world_character_path(@world, @character)
+        else
+            redirect_to new_character_path
+        end
     end
 
     def show
