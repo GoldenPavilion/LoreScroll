@@ -1,6 +1,11 @@
 class CharactersController < ApplicationController
 
     def index
+        if params[:world_id]
+            @characters = World.find(params[:world_id]).characters
+        else
+            @characters = Character.all
+        end
     end
 
     def new
