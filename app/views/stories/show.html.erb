@@ -3,5 +3,12 @@
 
 <h3>Setting: <%= link_to @story.world.name, world_path(@story.world) %></h3>
 
+<h3>Characters:</h3>
+<p>
+    <% @story.world.characters.each do |c| %>
+        <%= link_to c.name, world_character_path(@story.world, c) %><br>
+    <% end %>
+</p>
+
 <p><%= @story.summary %></p><br>
 
