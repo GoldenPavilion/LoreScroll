@@ -4,6 +4,7 @@ class CreateWorlds < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :scale
       t.string :description
+      t.string :user_id
 
       t.timestamps
     end

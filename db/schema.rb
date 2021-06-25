@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_003803) do
 
   create_table "characters", force: :cascade do |t|
     t.integer "world_id"
+    t.integer "character_id"
     t.string "name"
     t.string "role"
     t.integer "age"
@@ -37,7 +38,6 @@ ActiveRecord::Schema.define(version: 2021_06_19_003803) do
     t.string "title"
     t.string "summary"
     t.integer "user_id"
-    t.integer "world_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_003803) do
     t.string "name"
     t.string "scale"
     t.string "description"
+    t.string "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
