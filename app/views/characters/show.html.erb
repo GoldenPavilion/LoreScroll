@@ -1,5 +1,7 @@
 <h1><%= @character.name %></h1>
-<h6><%= @character.role %></h6>
+<h5><%= @character.role %> in <%= @character.story.title %></h5>
+
+<p>Setting: <%= @character.world.name %></p>
 
 <p>Age: <%= @character.age %></p>
 <p>Gender: <%= @character.gender %></p>
@@ -14,3 +16,5 @@
 
 <p>Motivation: </p>
 <p><%= @character.motivation %></p><br>
+
+<p><%= link_to "Edit Character", edit_character_path(@character) %>
