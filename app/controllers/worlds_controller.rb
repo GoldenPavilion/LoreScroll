@@ -9,7 +9,7 @@ class WorldsController < ApplicationController
     end
 
     def create
-        @world = World.new(world_params)
+        @world = current_user.worlds.build(world_params)
         if @world.save
             redirect_to world_path(@world)
         else
@@ -36,7 +36,7 @@ class WorldsController < ApplicationController
     private
 
     def world_params
-        params.require(:world).permit(:name, :scale, :description)
+        params.require(:world).permit(:name, :scale, :description, :user_id)
     end
 
 end
