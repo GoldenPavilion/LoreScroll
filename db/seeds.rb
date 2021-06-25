@@ -18,7 +18,6 @@ Story.create(title: "Watchmen", summary: "A realistic take on superhero mytholog
 Story.create(title: "V for Vendetta", summary: "An anarchistic vigilante faces down an authoritarian government.", user_id: 4)
 
 World.create(name: "Westeros", scale: "Continent", description: "A gritty medieval landscape with seven kingdoms ruled under one banner.", user_id: 1)
-World.create(name: "Essos", scale: "Continent", description: "The eastern continent beyond the narrow sea.", user_id: 1)
 World.create(name: "The Milky Way", scale: "Galaxy", description: "A massive, dynamic galactic society.", user_id: 2)
 World.create(name: "A Galaxy, Far, Far Away", scale: "Galaxy", description: "A massive, dynamic galactic society.", user_id: 3)
 World.create(name: "New York 1985", scale: "City", description: "An alternate universe where Richard Nixon is still president and New York City is crumbling under his policies.", user_id: 4)

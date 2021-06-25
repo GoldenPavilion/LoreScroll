@@ -6,7 +6,7 @@
     <%= f.label :world_id, "Setting/World:" %>
     <%= f.collection_select :world_id, current_user.worlds, :id, :name %><br>
     <%= f.label :role, "Role: " %>
-    <%= f.select :role, options_for_select([["Protagonist", 1], ["Antagonist", 2], ["Main Character", 3], ["Supporting Character", 4], ["Tertiary Character", 5], ["Single Appearance", 6], ["Mentioned", 7]]) %><br>
+    <%= f.select :role, options_for_select([["Protagonist"], ["Antagonist"], ["Main Character"], ["Supporting Character"], ["Tertiary Character"], ["Single Appearance"], ["Mentioned"]]) %><br>
     <%= f.label :age, "Age: " %>
     <%= f.number_field :age %><br>
     <%= f.label :gender, "Gender: " %>

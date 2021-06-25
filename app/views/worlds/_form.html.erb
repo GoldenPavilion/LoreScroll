@@ -2,7 +2,7 @@
     <%= f.label :name, "Setting Name: " %>
     <%= f.text_field :name %><br>
     <%= f.label :scale, "Scale: " %>
-    <%= f.select :scale, options_for_select([["Multiverse", 1], ["Universe", 2], ["Galaxy", 3], ["Planet", 4], ["Continent", 5], ["Nation", 6], ["Region", 7], ["City", 8], ["Town", 9], ["Building", 10], ["Other", 11]]) %><br>
+    <%= f.select :scale, options_for_select([["Multiverse"], ["Universe"], ["Galaxy"], ["Planet"], ["Continent"], ["Nation"], ["Region"], ["City"], ["Town"], ["Building"], ["Other"]]) %><br>
     <%= f.label :description, "Description:" %><br>
     <%= f.text_area :description %><br>
     <%= submit_tag "Forge Your World" %>
