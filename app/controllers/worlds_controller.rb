@@ -33,6 +33,12 @@ class WorldsController < ApplicationController
         redirect_to world_path(@world)
     end
 
+    def destroy
+        @world = World.find_by(params[:id])
+        @world.destroy
+        redirect_to user_path(@world.user)
+    end
+
     private
 
     def world_params
