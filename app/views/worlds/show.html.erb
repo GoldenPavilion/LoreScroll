@@ -1,3 +1,4 @@
 <h1><%= @world.name %></h1>
 <p>Scale: <%= @world.scale %></p>
+<p><%= link_to "The Characters of Your World", world_characters_path(@world) %></p>
 <p>Description: <%= @world.description %></p>
