@@ -1,5 +1,5 @@
 <h1><%= @character.name %></h1>
-<h5><%= @character.role %> in <%= @character.story.title %></h5>
+<h5><%= @character.role %></h5>
 
 <p>Setting: <%= @character.world.name %></p>
 
@@ -18,3 +18,4 @@
 <p><%= @character.motivation %></p><br>
 
 <p><%= link_to "Edit Character", edit_character_path(@character) %>
+<p><%= link_to "Delete Character", world_character_path(@character.world, @character), method: :delete %></p>

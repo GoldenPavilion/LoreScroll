@@ -38,6 +38,12 @@ class CharactersController < ApplicationController
         redirect_to world_character_path(@world, @character)
     end
 
+    def destroy
+        @character = Character.find_by_id(params[:id])
+        @character.destroy
+        redirect_to world_characters_path(@character.world)
+    end
+
     private
 
     def character_params
