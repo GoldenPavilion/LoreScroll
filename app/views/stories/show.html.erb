@@ -1,14 +1,18 @@
 <h1><%= @story.title %></h1>
 <h5>by <%= @story.user.author_name %>
 
-<h3>Setting: <%= link_to @story.world.name, world_path(@story.world) %></h3>
+<h3>Settings:</h3> 
+<% @story.worlds.each do |w| %>
+<%= link_to w.name, world_path(w) %>
+<% end %>
 
 <h3>Characters:</h3>
 <p>
-    <% @story.world.characters.each do |c| %>
+    <% @story.characters.each do |c| %>
         <%= link_to c.name, world_character_path(@story.world, c) %><br>
     <% end %>
 </p>
 
+<h3>Summary:</h3>
 <p><%= @story.summary %></p><br>
 

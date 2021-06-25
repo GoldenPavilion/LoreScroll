@@ -3,7 +3,5 @@
     <%= f.text_field :title %><br>
     <%= f.label :summary, "Summary: " %><br>
     <%= f.text_area :summary %><br>
-    <%= f.label :world_id, "Setting/World" %>
-    <%= f.collection_select :world_id, current_user.worlds, :id, :name %><br>
     <%= submit_tag "Create Story" %>
 <% end %>
