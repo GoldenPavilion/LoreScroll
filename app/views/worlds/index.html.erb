@@ -1,0 +1,9 @@
+<h1>Explore the LoreScroll Multiverse</h1>
+
+<% @worlds.each do |w| %>
+    <p><%= link_to w.name, world_path(w) %><br>
+    by  <% w.users.each do |u| %>
+            <%= u.author_name %>
+        <% end %>
+    </p>
+<% end %>
