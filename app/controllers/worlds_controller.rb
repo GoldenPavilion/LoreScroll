@@ -34,9 +34,9 @@ class WorldsController < ApplicationController
     end
 
     def destroy
-        @world = World.find_by(params[:id])
+        @world = World.find_by_id(params[:id])
         @world.destroy
-        redirect_to user_path(@world.user)
+        redirect_to user_path(current_user)
     end
 
     private
