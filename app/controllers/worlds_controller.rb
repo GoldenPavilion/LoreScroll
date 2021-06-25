@@ -13,7 +13,7 @@ class WorldsController < ApplicationController
         if @world.save
             redirect_to world_path(@world)
         else
-            flash[:notice] = "Something stopped your Big Bang. Try again!"
+            flash[:notice] = "Your world needs a name. Try again!"
             redirect_to new_world_path
         end
     end
