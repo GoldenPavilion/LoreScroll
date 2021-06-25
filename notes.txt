@@ -15,7 +15,16 @@
 ---Started work on WorldsController and views. World won't create - won't assign id. 
 ---Fixed issue with StoriesController. User can create, edit and show a story!
 
-6/23
+6/24
 ---Fixed save issue in WorldsController
 ---Added Edit Forms for Stories and Worlds
 ---Created new action and form partial for CharactersController
+
+6/25
+---Changed associations to better fit new design flow. 
+---Updated views to function with new associations
+
+ON RETURN
+---Determine why story show view isn't working and fix
+---Do I want to nest character in stories instead of worlds (probably...ugh)?
+---Validations?
