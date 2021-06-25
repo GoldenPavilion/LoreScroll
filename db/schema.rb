@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_003803) do
 
   create_table "characters", force: :cascade do |t|
     t.integer "world_id"
-    t.integer "character_id"
+    t.integer "story_id"
     t.string "name"
     t.string "role"
     t.integer "age"

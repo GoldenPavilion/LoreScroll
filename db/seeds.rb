@@ -11,20 +11,22 @@ User.create(username: "BioWare", author_name: "Casey Hudson", email: "casey@biow
 User.create(username: "LucasFilm", author_name: "George Lucas", email: "george@lucasfilm.com", password: "password")
 User.create(username: "HighPriest", author_name: "Alan Moore", email: "alan@oldhut.com", password: "password")
 
-Story.create(title: "Game of Thrones", summary: "Politics, blood and dragons.", user_id: 1, world_id: 1)
-Story.create(title: "Mass Effect 2", summary: "A galactic soap opera!", user_id: 2, world_id: 2)
-Story.create(title: "Star Wars", summary: "A band of rebels fight an evil empire.", user_id: 3, world_id: 3)
-Story.create(title: "Watchmen", summary: "A realistic take on superhero mythology.", user_id: 4, world_id: 4)
-Story.create(title: "V for Vendetta", summary: "An anarchistic vigilante faces down an authoritarian government.", user_id: 4, world_id: 5)
+Story.create(title: "Game of Thrones", summary: "Politics, blood and dragons.", user_id: 1)
+Story.create(title: "Mass Effect 2", summary: "A galactic soap opera!", user_id: 2)
+Story.create(title: "Star Wars", summary: "A band of rebels fight an evil empire.", user_id: 3)
+Story.create(title: "Watchmen", summary: "A realistic take on superhero mythology.", user_id: 4)
+Story.create(title: "V for Vendetta", summary: "An anarchistic vigilante faces down an authoritarian government.", user_id: 4)
 
-World.create(name: "Westeros", scale: "Continent", description: "A gritty medieval landscape with seven kingdoms ruled under one banner.")
-World.create(name: "The Milky Way", scale: "Galaxy", description: "A massive, dynamic galactic society.")
-World.create(name: "A Galaxy, Far, Far Away", scale: "Galaxy", description: "A massive, dynamic galactic society.")
-World.create(name: "New York 1985", scale: "City", description: "An alternate universe where Richard Nixon is still president and New York City is crumbling under his policies.")
-World.create(name: "London, The Near Future", scale: "City", description: "A dystopian London ruled over by an iron-gripped authoritarian rule.")
+World.create(name: "Westeros", scale: "Continent", description: "A gritty medieval landscape with seven kingdoms ruled under one banner.", user_id: 1)
+World.create(name: "Essos", scale: "Continent", description: "The eastern continent beyond the narrow sea.", user_id: 1)
+World.create(name: "The Milky Way", scale: "Galaxy", description: "A massive, dynamic galactic society.", user_id: 2)
+World.create(name: "A Galaxy, Far, Far Away", scale: "Galaxy", description: "A massive, dynamic galactic society.", user_id: 3)
+World.create(name: "New York 1985", scale: "City", description: "An alternate universe where Richard Nixon is still president and New York City is crumbling under his policies.", user_id: 4)
+World.create(name: "London, The Near Future", scale: "City", description: "A dystopian London ruled over by an iron-gripped authoritarian rule.", user_id: 4)
 
 Character.create(
     world_id: 1,
+    story_id: 1,
     name: "Jon Snow",
     role: "Main Character",
     age: 19,
@@ -38,6 +40,7 @@ Character.create(
 
 Character.create(
     world_id: 1,
+    story_id: 1,
     name: "Lady Brienne",
     role: "Supporting Character",
     age: 32,
@@ -51,6 +54,7 @@ Character.create(
 
 Character.create(
     world_id: 2,
+    story_id: 2,
     name: "Thane Krios",
     role: "Supporting Character",
     age: 45,
@@ -64,8 +68,9 @@ Character.create(
 
 Character.create(
     world_id: 2,
+    story_id: 2,
     name: "Liara T'soni",
-    role: "Main Character",
+    role: "Supporting Character",
     age: 106,
     gender: "Non-Binary",
     species: "Asari",
@@ -77,6 +82,7 @@ Character.create(
 
 Character.create(
     world_id: 3,
+    story_id: 3,
     name: "Darth Vader",
     role: "Antagonist",
     age: 45,
@@ -90,6 +96,7 @@ Character.create(
 
 Character.create(
     world_id: 3,
+    story_id: 3,
     name: "Han Solo",
     role: "Supporting Character",
     age: 32,
@@ -103,6 +110,7 @@ Character.create(
 
 Character.create(
     world_id: 4,
+    story_id: 4,
     name: "Night Owl",
     role: "Main Character",
     age: 53,
@@ -116,6 +124,7 @@ Character.create(
 
 Character.create(
     world_id: 5,
+    story_id: 5,
     name: "Evie",
     role: "Protagonist",
     age: 26,
