@@ -31,12 +31,11 @@ class StoriesController < ApplicationController
         redirect_to story_path(@story)
     end
 
-    #def destroy
-        #@story = Story.find_by_id(params[:id])
-        #@user = User.find_by_id(current_user.id)
-        #@story.destroy
-        #redirect_to user_path(@user)
-    #end
+    def destroy
+        @story = Story.find_by_id(params[:id])
+        @story.destroy
+        redirect_to user_path(@story.user)
+    end
 
     private
 

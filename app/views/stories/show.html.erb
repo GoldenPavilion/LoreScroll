@@ -16,5 +16,6 @@
 <h3>Summary:</h3>
 <p><%= @story.summary %></p><br>
 
-<p><%= link_to "Edit Story", edit_story_path(@story) %>
+<p><%= link_to "Edit Story", edit_story_path(@story) %></p>
+<%= link_to "Delete Story", story_path(@story), method: :delete %>
 
