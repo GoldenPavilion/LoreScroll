@@ -2,8 +2,6 @@
 
 <% @worlds.each do |w| %>
     <p><%= link_to w.name, world_path(w) %><br>
-    by  <% w.users.each do |u| %>
-            <%= u.author_name %>
-        <% end %>
+    by <%= w.user.author_name %>
     </p>
 <% end %>

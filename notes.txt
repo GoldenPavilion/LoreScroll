@@ -25,6 +25,5 @@
 ---Updated views to function with new associations
 
 ON RETURN
----Determine why story show view isn't working and fix
 ---Do I want to nest character in stories instead of worlds (probably...ugh)?
 ---Validations?
