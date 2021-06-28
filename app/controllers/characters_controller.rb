@@ -1,8 +1,8 @@
 class CharactersController < ApplicationController
 
     def index
-        if params[:world_id]
-            @characters = World.find(params[:world_id]).characters
+        if params[:story_id]
+            @characters = Story.find(params[:story_id]).characters
         else
             @characters = Character.all
         end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :worlds
   resources :stories
-  resources :worlds, only: [:show] do
+  resources :stories, only: [:show] do
     resources :characters, except: [:new, :create, :edit, :update]
   end
 
