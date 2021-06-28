@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   delete '/signout' => 'sessions#destroy'
 
-  resources :stories
   resources :worlds
+  resources :stories
   resources :worlds, only: [:show] do
     resources :characters, except: [:new, :create, :edit, :update]
   end
