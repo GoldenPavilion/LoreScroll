@@ -9,7 +9,8 @@ class CharactersController < ApplicationController
     end
 
     def new
-        @character = Character.new
+        @story = Story.find_by_id(params[:id])
+        @character = @story.build_character
     end
 
     def create
