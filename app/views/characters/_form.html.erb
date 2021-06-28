@@ -10,7 +10,7 @@
     <%= f.label :age, "Age: " %>
     <%= f.number_field :age %><br>
     <%= f.label :gender, "Gender: " %>
-    <%= f.select :gender, options_for_select([["Female", 1], ["Male", 2], ["Non-Binary", 3], ["Other", 4]]) %><br>
+    <%= f.select :gender, options_for_select([["Female"], ["Male"], ["Non-Binary"], ["Other"]]) %><br>
     <%= f.label :species, "Species: " %>
     <%= f.text_field :species %><br>
     <%= f.label :job, "Job: " %>
