@@ -1,6 +1,5 @@
 <h1><%= @world.name %></h1>
 <p>Scale: <%= @world.scale %></p>
-<p><%= link_to "The Characters of Your World", world_characters_path(@world) %></p>
 <p>Description: <%= @world.description %></p><br>
 <p><%= link_to "Edit World", edit_world_path(@world) %>
 <p><%= link_to "Delete World", world_path(@world), method: :delete %></p>
