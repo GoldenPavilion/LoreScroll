@@ -1,4 +1,4 @@
 <h1>Characters</h1>
 <% @characters.each do |c| %>
-    <%= link_to c.name, world_character_path(c.world, c) %><br>
+    <%= link_to c.name, story_character_path(c.story, c) %><br>
 <% end %>
