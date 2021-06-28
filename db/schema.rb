@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_19_003803) do
+ActiveRecord::Schema.define(version: 2021_06_28_171654) do
 
   create_table "characters", force: :cascade do |t|
     t.integer "world_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_003803) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "medium"
   end
 
   create_table "story_genres", force: :cascade do |t|
