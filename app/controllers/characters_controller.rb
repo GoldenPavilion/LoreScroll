@@ -14,7 +14,6 @@ class CharactersController < ApplicationController
 
     def create
         @character = Character.new(character_params)
-        #@story = Story.find_by(id: @character.story_id)
         if @character.save
             redirect_to story_character_path(@character.story, @character)
         else
@@ -34,14 +33,13 @@ class CharactersController < ApplicationController
     def update
         @character = Character.find_by(id: params[:id])
         @character.update(character_params)
-        @world = World.find_by(id: @character.world_id)
-        redirect_to world_character_path(@world, @character)
+        redirect_to story_character_path(@character.story, @character)
     end
 
     def destroy
         @character = Character.find_by_id(params[:id])
         @character.destroy
-        redirect_to world_characters_path(@character.world)
+        redirect_to story_characters_path(@character.story)
     end
 
     private
