@@ -134,3 +134,10 @@ Character.create(
     description: "Naive, but strong.",
     motivation: "To survive her day to day existence."
 )
+
+Genre.create(name: "Fantasy")
+Genre.create(name: "Science Fiction")
+Genre.create(name: "Drama")
+Genre.create(name: "Comedy")
+Genre.create(name: "Alternative History")
+Genre.create(name: "Space Opera")

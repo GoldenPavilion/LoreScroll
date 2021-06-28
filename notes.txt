@@ -24,6 +24,14 @@
 ---Changed associations to better fit new design flow. 
 ---Updated views to function with new associations
 
+
+
+
 ON RETURN
 ---Do I want to nest character in stories instead of worlds (probably...ugh)?
----Validations?
+---Nested forms so user can add new world or story when creating a character
+---Fix Duplication of data presentation
+---Scoping
+---OmniAuth 
+---Add validation errors 
+
