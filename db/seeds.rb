@@ -11,11 +11,11 @@ User.create(username: "BioWare", author_name: "Casey Hudson", email: "casey@biow
 User.create(username: "LucasFilm", author_name: "George Lucas", email: "george@lucasfilm.com", password: "password")
 User.create(username: "HighPriest", author_name: "Alan Moore", email: "alan@oldhut.com", password: "password")
 
-Story.create(title: "Game of Thrones", summary: "Politics, blood and dragons.", user_id: 1)
-Story.create(title: "Mass Effect 2", summary: "A galactic soap opera!", user_id: 2)
-Story.create(title: "Star Wars", summary: "A band of rebels fight an evil empire.", user_id: 3)
-Story.create(title: "Watchmen", summary: "A realistic take on superhero mythology.", user_id: 4)
-Story.create(title: "V for Vendetta", summary: "An anarchistic vigilante faces down an authoritarian government.", user_id: 4)
+Story.create(title: "Game of Thrones", medium: "Novel", summary: "Politics, blood and dragons.", user_id: 1)
+Story.create(title: "Mass Effect 2", medium: "Video Game", summary: "A galactic soap opera!", user_id: 2)
+Story.create(title: "Star Wars", medium: "Screenplay", summary: "A band of rebels fight an evil empire.", user_id: 3)
+Story.create(title: "Watchmen", medium: "Comic Book", summary: "A realistic take on superhero mythology.", user_id: 4)
+Story.create(title: "V for Vendetta", medium: "Comic Book", summary: "An anarchistic vigilante faces down an authoritarian government.", user_id: 4)
 
 World.create(name: "Westeros", scale: "Continent", description: "A gritty medieval landscape with seven kingdoms ruled under one banner.", user_id: 1)
 World.create(name: "The Milky Way", scale: "Galaxy", description: "A massive, dynamic galactic society.", user_id: 2)
