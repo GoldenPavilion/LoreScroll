@@ -1,5 +1,5 @@
 <h1><%= @story.title %></h1>
-<h5>by <%= @story.user.author_name %>
+<h5>A <%= @story.medium %> by <%= @story.user.author_name %></h5>
 
 <h3>Settings:</h3> 
 <% @story.worlds.each do |w| %>
