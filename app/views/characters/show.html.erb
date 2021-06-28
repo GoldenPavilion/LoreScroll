@@ -18,4 +18,4 @@
 <p><%= @character.motivation %></p><br>
 
 <p><%= link_to "Edit Character", edit_character_path(@character) %>
-<p><%= link_to "Delete Character", world_character_path(@character.world, @character), method: :delete %></p>
+<p><%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete %></p>
