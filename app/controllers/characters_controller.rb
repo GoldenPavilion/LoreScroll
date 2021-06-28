@@ -19,7 +19,7 @@ class CharactersController < ApplicationController
             redirect_to story_character_path(@character.story, @character)
         else
             flash[:notice] = "A character must have a name, setting and story."
-            redirect_to new_character_path
+            redirect_to new_story_character_path
         end
     end
 

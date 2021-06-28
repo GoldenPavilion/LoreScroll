@@ -1,8 +1,6 @@
 <%= form_for @character do |f| %>
     <%= f.label :name, "Name: " %>
     <%= f.text_field :name %><br>
-    <%= f.label :story_id, "Story:" %>
-    <%= f.collection_select :story_id, current_user.stories, :id, :title %><br>
     <%= f.label :world_id, "Setting/World:" %>
     <%= f.collection_select :world_id, current_user.worlds, :id, :name %><br>
     <%= f.label :role, "Role: " %>
