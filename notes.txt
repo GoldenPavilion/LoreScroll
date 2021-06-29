@@ -28,10 +28,12 @@
 
 
 ON RETURN
----Do I want to nest character in stories instead of worlds (probably...ugh)?
 ---Nested forms so user can add new world or story when creating a character
 ---Fix Duplication of data presentation
 ---Scoping
 ---OmniAuth 
 ---Add validation errors 
+
+Questions for Dustin:
+--- Why aren't my errors displaying in the view?
 

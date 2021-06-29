@@ -1,5 +1,5 @@
 class Character < ApplicationRecord
-    validates :name, presence: true
+    validates :name, presence: true, uniqueness: {scope: :story}
     validates :world_id, presence: true
     validates :story_id, presence: true
     
