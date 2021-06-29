@@ -2,6 +2,6 @@
 
 <% @worlds.each do |w| %>
     <p><%= link_to w.name, world_path(w) %><br>
-    by <%= w.user.author_name %>
+    Drafted by <%= w.user.author_name %> on <%= w.created_at.strftime("%B %e, 20%y") %>
     </p>
 <% end %>
