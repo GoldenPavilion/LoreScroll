@@ -5,4 +5,6 @@ class Character < ApplicationRecord
     
     belongs_to :world
     belongs_to :story
+
+    scope :main_characters, -> {where(role: "Main Character").limit(5)}
 end
