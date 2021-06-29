@@ -1,5 +1,5 @@
 class Story < ApplicationRecord
-    validates :title, presence: true 
+    validates :title, presence: true, uniqueness: {scope: :user}
     
     belongs_to :user 
     has_many :characters 
