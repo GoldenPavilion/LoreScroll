@@ -16,7 +16,7 @@ class CharactersController < ApplicationController
     def create
         @character = Character.new(character_params)
         if @character.save
-            redirect_to story_character_path(@character.story, @character)
+            redirect_to story_characters_path(@character.story)
         else
             flash[:notice] = "A character must have a name, setting and story."
             redirect_to new_story_character_path(@character.story)
