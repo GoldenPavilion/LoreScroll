@@ -3,14 +3,15 @@
 
 <h3>Settings:</h3> 
 <% @story.worlds.each do |w| %>
-<%= link_to w.name, world_path(w) %><br>
+    <%= link_to w.name, world_path(w) %><br>
 <% end %>
 
 <h3>Characters:</h3>
 <p>
-    <% @story.characters.each do |c| %>
+    <% @story.characters.main_characters.each do |c| %>
         <%= link_to c.name, story_character_path(c.story, c) %><br>
     <% end %>
+    <%= link_to "...See More Characters", story_characters_path(@story)%>
 </p>
 
 <p><b><%= link_to "Add A Character", new_story_character_path(@story) %></b></p>
