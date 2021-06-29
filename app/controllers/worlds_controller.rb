@@ -1,7 +1,7 @@
 class WorldsController < ApplicationController
 
     def index
-        @worlds = World.all
+        @worlds = World.most_recent
     end
 
     def new
