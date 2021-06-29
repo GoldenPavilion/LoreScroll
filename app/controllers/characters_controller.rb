@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
 
     def index
         if params[:story_id]
-            @characters = Story.find(params[:story_id]).characters.main_characters
+            @characters = Story.find(params[:story_id]).characters.order_by_role
         else
             @characters = Character.all
         end
