@@ -1,5 +1,5 @@
 class World < ApplicationRecord
-    validates :name, presence: true
+    validates :name, presence: true, uniqueness: {scope: :user}
     
     belongs_to :user
     has_many :characters
