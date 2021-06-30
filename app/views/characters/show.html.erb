@@ -17,5 +17,7 @@
 <p>Motivation: </p>
 <p><%= @character.motivation %></p><br>
 
-<p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character) %>
-<p><%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete %></p>
+<% if current_user.id == @character.story.user_id.to_i %>
+    <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character) %>
+    <p><%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete %></p>
+<% end %>
