@@ -9,8 +9,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-            flash[:notice] = "Username must be unique. Author Name, Email and Password are required."
-            redirect_to new_user_path
+            render 'new'
         end
     end
 
