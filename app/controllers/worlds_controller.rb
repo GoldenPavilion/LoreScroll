@@ -1,5 +1,6 @@
 class WorldsController < ApplicationController
     before_action :require_login
+    before_action :created_by_user, only: [:edit, :update]
 
     def index
         @worlds = World.most_recent
@@ -45,11 +46,11 @@ class WorldsController < ApplicationController
         params.require(:world).permit(:name, :scale, :description, :user_id)
     end
 
-    #def created_by_user
-        #unless @world.user_id == current_user.id
-            #flash[:notify] = "Cannot edit content you did not create."
-            #redirect_to world_path(@world)
-        #end
-    #end
-
+    def created_by_user
+        @world = World.find_by(id: params[:id])
+        unless @world.user_id.to_i == current_user.id
+            flash[:notify] = "Cannot edit content you did not create."
+            redirect_to world_path(@world)
+        end
+    end
 end
