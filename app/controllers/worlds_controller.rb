@@ -45,4 +45,11 @@ class WorldsController < ApplicationController
         params.require(:world).permit(:name, :scale, :description, :user_id)
     end
 
+    #def created_by_user
+        #unless @world.user_id == current_user.id
+            #flash[:notify] = "Cannot edit content you did not create."
+            #redirect_to world_path(@world)
+        #end
+    #end
+
 end
