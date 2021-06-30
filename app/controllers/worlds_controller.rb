@@ -14,7 +14,7 @@ class WorldsController < ApplicationController
             redirect_to world_path(@world)
         else
             flash[:notice] = "Your world needs a name. Try again!"
-            redirect_to new_world_path
+            render 'new'
         end
     end
 
