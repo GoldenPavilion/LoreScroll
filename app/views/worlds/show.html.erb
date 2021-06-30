@@ -1,5 +1,8 @@
 <h1><%= @world.name %></h1>
 <p>Scale: <%= @world.scale %></p>
 <p>Description: <%= @world.description %></p><br>
-<p><%= link_to "Edit World", edit_world_path(@world) %>
-<p><%= link_to "Delete World", world_path(@world), method: :delete %></p>
+
+<% if current_user.id == @world.user_id.to_i %>
+    <p><%= link_to "Edit World", edit_world_path(@world) %>
+    <p><%= link_to "Delete World", world_path(@world), method: :delete %></p>
+<% end %>
