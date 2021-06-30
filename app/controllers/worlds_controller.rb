@@ -49,8 +49,8 @@ class WorldsController < ApplicationController
     def created_by_user
         @world = World.find_by(id: params[:id])
         unless @world.user_id.to_i == current_user.id
-            flash[:notify] = "Cannot edit content you did not create."
-            redirect_to world_path(@world)
+            flash[:notify] = "You cannot edit content you did not create."
+            redirect_to worlds_path
         end
     end
 end

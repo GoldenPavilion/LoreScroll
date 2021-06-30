@@ -1,5 +1,11 @@
 <h1>Explore the LoreScroll Multiverse</h1>
 
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
+
 <% @worlds.each do |w| %>
     <p><%= link_to w.name, world_path(w) %><br>
     Drafted by <%= w.user.author_name %> on <%= w.created_at.strftime("%B %e, 20%y") %>
