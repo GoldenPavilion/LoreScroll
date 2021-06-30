@@ -1,4 +1,5 @@
 class WorldsController < ApplicationController
+    before_action :require_login
 
     def index
         @worlds = World.most_recent

@@ -1,4 +1,5 @@
 class CharactersController < ApplicationController
+    before_action :require_login
 
     def index
         if params[:story_id]
