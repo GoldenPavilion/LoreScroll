@@ -1,7 +1,3 @@
-<h1>Add A Character to <%= @story.title %></h1>
-<% flash.each do |type, msg| %>
-    <div>
-        <%= msg %>
-    </div>
-<% end %>
+<h1>Add A Character</h1>
+<%= render partial: 'shared/errors', locals: {object: @character} %>
 <%= render 'form' %>

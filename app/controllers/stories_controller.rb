@@ -12,7 +12,6 @@ class StoriesController < ApplicationController
         if @story.save
             redirect_to story_path(@story)
         else
-            flash[:notify] = "Your story needs a title. Try again!"
             render 'new'
         end
     end
