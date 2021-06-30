@@ -36,4 +36,5 @@ ON RETURN
 
 Questions for Dustin:
 --- Why aren't my errors displaying in the view?
+--- Why am I getting duplicate datas?
 
