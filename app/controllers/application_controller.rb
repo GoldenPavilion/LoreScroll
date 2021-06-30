@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!current_user
     end
+
+    def require_login
+        unless logged_in?
+            flash[:notify] = "User must be logged in to access this data."
+            redirect_to signin_path
+        end
+    end
 end
