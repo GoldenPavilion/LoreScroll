@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
     before_action :require_login
+    before_action :created_by_user, only: [:edit, :update]
 
     def index
     end
@@ -42,5 +43,12 @@ class StoriesController < ApplicationController
     def story_params
         params.require(:story).permit(:title, :medium, :summary, :user_id)
     end
-
+    
+    def created_by_user
+        @story = Story.find_by(id: params[:id])
+        unless @story.user_id.to_i == current_user.id
+            flash[:notify] = "You cannot edit a story you did not create."
+            redirect_to stories_path
+        end
+    end
 end
