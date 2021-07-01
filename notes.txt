@@ -37,7 +37,3 @@ ON RETURN
 Questions for Dustin:
 
 
-
-
-if current_user.stories.ids.include?(params[:story_id])
-

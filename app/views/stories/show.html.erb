@@ -18,7 +18,9 @@
     <% end %>
 </p>
 
-<p><b><%= link_to "Add A Character", new_story_character_path(@story) %></b></p>
+<% if current_user.id == @story.user_id.to_i %>
+    <p><b><%= link_to "Add A Character", new_story_character_path(@story) %></b></p>
+<% end %>
 
 <h3>Summary:</h3>
 <p><%= @story.summary %></p><br>
