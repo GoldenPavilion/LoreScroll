@@ -13,7 +13,11 @@ class SessionsController < ApplicationController
             flash[:notify] = "Something went wrong. Try again!"
             redirect_to signin_path
         end
-    end    
+    end
+    
+    def omniauth
+        binding.pry
+    end
 
     def destroy
         if current_user
