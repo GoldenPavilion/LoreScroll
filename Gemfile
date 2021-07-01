@@ -32,6 +32,7 @@ gem 'pry'
 
 #omniauth gems
 gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 

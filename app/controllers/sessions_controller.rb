@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         end
     end
     
-    def omniauth
+    def google_auth
         binding.pry
     end
 
