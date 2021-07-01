@@ -35,6 +35,9 @@ ON RETURN
 ---Add validation errors 
 
 Questions for Dustin:
---- Why aren't my errors displaying in the view?
---- Why am I getting duplicate datas?
+
+
+
+
+if current_user.stories.ids.include?(params[:story_id])
 

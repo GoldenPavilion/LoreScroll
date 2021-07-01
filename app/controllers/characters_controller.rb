@@ -17,10 +17,15 @@ class CharactersController < ApplicationController
 
     def create
         @character = Character.new(character_params)
-        if @character.save
-            redirect_to story_characters_path(@character.story)
+        if current_user.stories.ids.include?(params[:character][:story_id].to_i)
+            if @character.save
+                redirect_to story_characters_path(@character.story)
+            else
+                render 'new'
+            end
         else
-            render 'new'
+            flash[:notify] = "You cannot add a character to someone else's story."
+            redirect_to stories_path
         end
     end
 
