@@ -8,4 +8,12 @@ class User < ApplicationRecord
     has_many :stories
     has_many :worlds
 
+    def self.google_create(auth)
+        self.find_or_create_by(username: auth[:info][:email]) do |u|
+            u.password = SecureRandom.hex
+            u.email = auth[:info][:email]
+            u.author_name = auth[:info][:name]   
+        end
+    end
+
 end
