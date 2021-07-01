@@ -3,6 +3,7 @@ class StoriesController < ApplicationController
     before_action :created_by_user, only: [:edit, :update]
 
     def index
+        @stories = Story.all
     end
     
     def new

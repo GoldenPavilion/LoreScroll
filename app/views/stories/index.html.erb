@@ -5,3 +5,9 @@
         <%= msg %>
     </div>
 <% end %>
+
+<% @stories.each do |s| %>
+    <p><%= link_to s.title, story_path(s) %><br>
+    Drafted by <%= s.user.author_name %> on <%= s.created_at.strftime("%B %e, 20%y") %>
+    </p>
+<% end %>
