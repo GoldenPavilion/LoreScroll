@@ -1,4 +1,11 @@
 <h1>Characters</h1>
+
+<% flash.each do |type, msg| %>
+    <div>
+        <b><%= msg %></b>
+    </div>
+<% end %>
+<br>
 <% @characters.each do |c| %>
     <b><%= link_to c.name, story_character_path(c.story, c) %></b> (<%= c.role %>)<br>
 <% end %>
