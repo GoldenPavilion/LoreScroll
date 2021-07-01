@@ -16,7 +16,14 @@ class SessionsController < ApplicationController
     end
     
     def google_auth
-        binding.pry
+        @user = User.find_or_create_by(username: auth[:info][:email]) do |u|
+            u.password = SecureRandom.hex
+            u.email = auth[:info][:email]
+            u.author_name = auth[:info][:name]   
+        end
+
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
     end
 
     def destroy
@@ -24,5 +31,11 @@ class SessionsController < ApplicationController
             session.destroy
             redirect_to root_path
         end
+    end
+
+    private 
+
+    def auth
+        request.env['omniauth.auth']
     end
 end
