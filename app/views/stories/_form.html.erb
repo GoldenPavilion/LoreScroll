@@ -4,10 +4,7 @@
     <%= f.label :medium, "Medium: " %>
     <%= f.select :medium, options_for_select([["Novel"], ["Tabletop RPG"], ["Screenplay"], ["Video Game"], ["Podcast"], ["Play"], ["Comic Book"], ["Other"]]) %><br>
     <%= f.label :genre, "Genres:" %><br>
-    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) do |g| %>
-        <%= g.check_box %>
-        <%= g.object.name %><br>
-    <% end %><br>
+    <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name %><br><br>
     ...or Add A New Genre:<br>
     <%= f.fields_for :genres, @story.genres.build do |genre_fields| %>
         <%= genre_fields.text_field :name %>
