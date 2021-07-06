@@ -1,3 +1,5 @@
 <h1>Build A World</h1>
 <%= render partial: 'shared/errors', locals: {object: @world} %>
 <%= render 'form' %>
+<br>
+<%= link_to "Back Home", user_path(current_user) %>

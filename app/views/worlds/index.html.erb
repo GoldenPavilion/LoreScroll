@@ -11,3 +11,7 @@
     Drafted by <%= w.user.author_name %> on <%= w.created_at.strftime("%B %e, 20%y") %>
     </p>
 <% end %>
+
+<br>
+
+<%= link_to "Back Home", user_path(current_user) %>

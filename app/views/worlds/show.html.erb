@@ -6,3 +6,5 @@
     <p><%= link_to "Edit World", edit_world_path(@world) %>
     <p><%= link_to "Delete World", world_path(@world), method: :delete %></p>
 <% end %>
+<br>
+<%= link_to "Back Home", user_path(current_user) %>
