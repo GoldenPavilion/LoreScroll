@@ -6,7 +6,7 @@
     <%= link_to w.name, world_path(w) %><br>
 <% end %>
 
-<h3>Characters:</h3>
+<h3>Main Characters:</h3>
 <p>
     <% @story.characters.main_characters.each do |c| %>
         <%= link_to c.name, story_character_path(c.story, c) %><br>
