@@ -3,6 +3,11 @@
     <%= f.text_field :title %><br>
     <%= f.label :medium, "Medium: " %>
     <%= f.select :medium, options_for_select([["Novel"], ["Tabletop RPG"], ["Screenplay"], ["Video Game"], ["Podcast"], ["Play"], ["Comic Book"], ["Other"]]) %><br>
+    <%= f.label :genre, "Genres:" %><br>
+    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) do |g| %>
+        <%= g.check_box %>
+        <%= g.object.name %><br>
+    <% end %><br>    
     <%= f.label :summary, "Summary: " %><br>
     <%= f.text_area :summary %><br>
     <%= submit_tag "Create Story" %>
