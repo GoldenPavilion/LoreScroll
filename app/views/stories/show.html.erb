@@ -1,6 +1,13 @@
 <h1><%= @story.title %></h1>
 <h5>A <%= @story.medium %> by <%= @story.user.author_name %></h5>
 
+<h3>Genre(s):</h3>
+<% @story.genres.each do |g| %>
+    <ul>
+        <li><%= g.name %></li>
+    </ul>
+<% end %>
+
 <h3>Settings:</h3> 
 <% @story.worlds.each do |w| %>
     <%= link_to w.name, world_path(w) %><br>
