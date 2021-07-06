@@ -1,2 +1,4 @@
 <h1>Edit <%= @character.name %></h1>
 <%= render 'form' %>
+<br>
+<%= link_to "Back To Character", story_character_path(@character.story, @character) %>

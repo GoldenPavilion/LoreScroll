@@ -21,3 +21,5 @@
     <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character) %>
     <p><%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete %></p>
 <% end %>
+<br>
+<%= link_to "Back To Characters", story_characters_path(@character.story) %>

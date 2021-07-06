@@ -1,3 +1,5 @@
 <h1>Add A Character</h1>
 <%= render partial: 'shared/errors', locals: {object: @character} %>
 <%= render 'form' %>
+<br>
+<%= link_to "Back To Characters", story_characters_path(@character.story) %>
