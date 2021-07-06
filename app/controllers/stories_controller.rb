@@ -42,7 +42,7 @@ class StoriesController < ApplicationController
     private
 
     def story_params
-        params.require(:story).permit(:title, :medium, :summary, :user_id, genre_ids:[])
+        params.require(:story).permit(:title, :medium, :summary, :user_id, genre_ids:[], genres_attributes: [:name])
     end
     
     def created_by_user

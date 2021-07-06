@@ -6,6 +6,7 @@ class Story < ApplicationRecord
     has_many :worlds, -> {distinct}, through: :characters
     has_many :story_genres
     has_many :genres, through: :story_genres
+    accepts_nested_attributes_for :genres
 
     scope :most_recent, -> {order('created_at DESC')}
 end

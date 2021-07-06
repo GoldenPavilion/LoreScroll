@@ -8,7 +8,7 @@
     </ul>
 <% end %>
 
-<h3>Settings:</h3> 
+<h3>Setting(s):</h3> 
 <% @story.worlds.each do |w| %>
     <%= link_to w.name, world_path(w) %><br>
 <% end %>

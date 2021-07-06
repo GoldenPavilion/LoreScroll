@@ -9,8 +9,8 @@
         <%= g.object.name %><br>
     <% end %><br>
     ...or Add A New Genre:<br>
-    <%= f.fields_for :genres, @story.genres.build do |genre| %>
-        <%= genre.text_field :name %>
+    <%= f.fields_for :genres, @story.genres.build do |genre_fields| %>
+        <%= genre_fields.text_field :name %>
     <% end %><br><br>    
     <%= f.label :summary, "Summary: " %><br>
     <%= f.text_area :summary %><br>
