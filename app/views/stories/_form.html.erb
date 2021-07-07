@@ -3,7 +3,7 @@
     <%= f.text_field :title %><br><br>
     <%= f.label :medium, "Medium: " %><br>
     <%= f.select :medium, options_for_select([["Novel"], ["Tabletop RPG"], ["Screenplay"], ["Video Game"], ["Podcast"], ["Play"], ["Comic Book"], ["Other"]]) %><br><br>
-    <%= f.label :genre, "Genres:" %><br>
+    <%= f.label :genre, "Genres (Please Select At Least One): " %><br>
     <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name %><br><br>
     ...or Add A New Genre:<br>
     <%= f.fields_for :genres, @story.genres.build do |genre_fields| %>
