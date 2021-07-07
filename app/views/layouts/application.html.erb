@@ -26,6 +26,8 @@
 
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
+              <li><%= link_to "Create Your World", new_world_path %></li>
+              <li><%= link_to "Tell Your Story", new_story_path %></li>
               <li><%= link_to "Worlds", worlds_path %></li>
               <li><%= link_to "Stories", stories_path %></li>
               <li><%= link_to "Log Out", signout_path, method: "delete" %></li> 

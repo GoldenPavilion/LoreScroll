@@ -3,14 +3,12 @@
 </div>
 
 <p>
-This is your Story Quill, where you can create new characters, stories and even worlds!<br>
-If you're brand new to LoreScroll, start by setting up your world. 
+This is your Story Quill, where you can create new characters, stories and even worlds!<br><br>
+New to LoreScroll? Let's get started.<br><br>
+1. <%= link_to "Create your world", new_world_path %>, a setting for your story to flourish in.<br> 
+2. <%= link_to "Tell your story", new_story_path %> and leave your audience enraptured.<br>
+3. Fill that story with characters and link them to your worlds.  
 </p>
-
-<h3>The Story Quill</h3>
-<p><%= link_to "Create Your World", new_world_path %></p>
-<p><%= link_to "Tell Your Story", new_story_path %></p>
-<br>
 
 <h3>Your Worlds</h3>
 <% @user.worlds.each do |w| %>
