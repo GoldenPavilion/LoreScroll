@@ -1,4 +1,6 @@
-<h1>Edit <%= @story.title %></h1>
+<div class="title-container">
+    <h1>Edit <%= @story.title %></h1>
+</div>
 <%= render 'form' %>
 <br>
 <%= link_to "Back To Story", story_path(@story) %>

@@ -3,6 +3,10 @@
     <h4>A <%= @story.medium %> by <%= @story.user.author_name %></h4>
 </div>
 
+<% if current_user.id == @story.user_id.to_i %>
+    <p><b><%= link_to "Add A Character", new_story_character_path(@story), class: "btn btn-default" %></b></p>
+<% end %>
+<br>
 <h4>Genre(s):</h4>
 <% @story.genres.each do |g| %>
     <ul>
@@ -31,14 +35,10 @@
     <% end %>
 </p>
 
-<% if current_user.id == @story.user_id.to_i %>
-    <p><b><%= link_to "Add A Character", new_story_character_path(@story), class: "btn btn-default" %></b></p>
-<% end %>
-
 <h3>Summary:</h3>
 <p><%= @story.summary %></p><br>
 
 <% if current_user.id == @story.user_id.to_i %>
-    <p><%= link_to "Edit Story", edit_story_path(@story), class: "btn btn-default" %></p>
-    <p><%= link_to "Delete Story", story_path(@story), method: :delete, class: "btn btn-default" %></p>
+    <p><%= link_to "Edit Story", edit_story_path(@story), class: "btn btn-default" %>
+    <%= link_to "Delete Story", story_path(@story), method: :delete, class: "btn btn-default" %></p>
 <% end %>
