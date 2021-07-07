@@ -1,2 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.welcome-desc {
+  margin: auto;
+  width: 50%;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 12px;
+}
