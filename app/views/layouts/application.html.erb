@@ -12,6 +12,30 @@
   </head>
 
   <body>
+
+    <header class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <% if !logged_in? %>
+              <%= link_to "LoreScroll", root_path, class: "navbar-brand" %>
+            <% else %>
+              <%= link_to "LoreScroll", user_path(current_user), class: "navbar-brand" %>
+            <% end %>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to "Worlds", worlds_path %></li>
+              <li><%= link_to "Stories", stories_path %></li>
+              <li><%= link_to "Log Out", signout_path, method: "delete" %></li> 
+            <% else %>
+              <li><%= link_to "Sign In", signin_path %><br></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
