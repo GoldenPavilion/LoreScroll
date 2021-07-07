@@ -1,7 +1,7 @@
 <%= form_for @story do |f| %>
-    <%= f.label :title, "Title: " %>
+    <%= f.label :title, "Title: " %><br>
     <%= f.text_field :title %><br><br>
-    <%= f.label :medium, "Medium: " %>
+    <%= f.label :medium, "Medium: " %><br>
     <%= f.select :medium, options_for_select([["Novel"], ["Tabletop RPG"], ["Screenplay"], ["Video Game"], ["Podcast"], ["Play"], ["Comic Book"], ["Other"]]) %><br><br>
     <%= f.label :genre, "Genres:" %><br>
     <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name %><br><br>
@@ -10,6 +10,6 @@
         <%= genre_fields.text_field :name %>
     <% end %><br><br>    
     <%= f.label :summary, "Summary: " %><br>
-    <%= f.text_area :summary %><br>
+    <%= f.text_area :summary %><br><br>
     <%= submit_tag "Create Story" %>
 <% end %>

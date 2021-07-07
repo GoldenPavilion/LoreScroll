@@ -1,5 +1,6 @@
-<h1>Tell A Story</h1>
+<div class="title-container">
+    <h1>Tell A Story</h1>
+</div>
 <%= render partial: 'shared/errors', locals: {object: @story} %>
 <%= render 'form' %>
 <br>
-<%= link_to "Back Home", user_path(current_user) %>
