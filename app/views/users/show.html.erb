@@ -9,15 +9,17 @@ New to LoreScroll? Let's get started.<br><br>
 2. <%= link_to "Tell your story", new_story_path %> and leave your audience enraptured.<br>
 3. Fill that story with characters and link them to your worlds.  
 </p>
-
-<h3>Your Worlds</h3>
-<% @user.worlds.each do |w| %>
-    <%= link_to w.name, world_path(w) %><br>
-<% end %>
 <br>
-
-<h3>Your Stories</h3>
-<% @user.stories.each do |s| %>
-    <%= link_to s.title, story_path(s) %><br>
-<% end %>
+<div class="content-box">
+    <h3>Your Worlds</h3>
+        <% @user.worlds.each do |w| %>
+            <li><%= link_to w.name, world_path(w) %></li><br>
+        <% end %>
+</div>
 <br>
+<div class="content-box">
+    <h3>Your Stories</h3>
+        <% @user.stories.each do |s| %>
+            <li><%= link_to s.title, story_path(s) %></li><br>
+        <% end %>
+</div>

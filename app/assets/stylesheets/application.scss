@@ -23,3 +23,10 @@
         margin: 0;
     }
 }
+
+.content-box {
+    box-sizing: border-box;
+    width: 100%;
+    border: solid darkslategray 2px;
+    padding: 5px;
+}
