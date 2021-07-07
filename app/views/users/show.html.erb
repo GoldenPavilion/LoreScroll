@@ -1,4 +1,6 @@
-<h1>Welcome aboard, <%= @user.username %>!</h1>
+<div class="title-container">
+    <h2>Welcome aboard, <%= @user.username %>!</h2>
+</div>
 
 <p>
 This is your Story Quill, where you can create new characters, stories and even worlds!<br>
@@ -16,14 +18,8 @@ If you're brand new to LoreScroll, start by setting up your world.
 <% end %>
 <br>
 
-<h4><%= link_to "Explore Other Worlds", worlds_path %></h4><br>
-
 <h3>Your Stories</h3>
 <% @user.stories.each do |s| %>
     <%= link_to s.title, story_path(s) %><br>
 <% end %>
 <br>
-
-<h4><%= link_to "Explore Other Stories", stories_path %></h4><br>
-
-<p><%= link_to "Log Out", signout_path, method: "delete" %></p>
