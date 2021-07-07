@@ -3,7 +3,7 @@
 </div>    
 <p><b>Scale:</b> <%= @world.scale %></p>
 <p><b>Characters of <%= @world.name %>: </b></p>
-<% @world.characters.each do |c| %>
+<% @world.characters.order_by_name.each do |c| %>
     <ul>
         <li><%= link_to c.name, story_character_path(c.story, c) %></li>
     </ul>
