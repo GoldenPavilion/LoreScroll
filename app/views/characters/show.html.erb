@@ -1,25 +1,27 @@
-<h1><%= @character.name %></h1>
-<h5><%= @character.role %> in <%= @character.story.title %></h5>
+<div class="title-container">
+    <h1><%= @character.name %></h1>
+    <h5><%= @character.role %> in <%= @character.story.title %></h5>
+</div>
 
-<p>Setting: <%= @character.world.name %></p>
+<p><b>Setting: </b><%= @character.world.name %></p>
 
-<p>Age: <%= @character.age %></p>
-<p>Gender: <%= @character.gender %></p>
-<p>Species: <%= @character.species %></p>
-<p>Job: <%= @character.job %></p><br>
+<p><b>Age: </b><%= @character.age %></p>
+<p><b>Gender: </b><%= @character.gender %></p>
+<p><b>Species: </b><%= @character.species %></p>
+<p><b>Job: </b><%= @character.job %></p><br>
 
-<p>Physical Description: </p>
+<p><b>Physical Description: </b></p>
 <p><%= @character.physical %></p><br>
 
-<p>Personality Description: </p>
+<p><b>Personality Description: </b></p>
 <p><%= @character.description %></p><br>
 
-<p>Motivation: </p>
+<p><b>Motivation: </b></p>
 <p><%= @character.motivation %></p><br>
 
 <% if current_user.id == @character.story.user_id.to_i %>
-    <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character) %>
-    <p><%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete %></p>
+    <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character), class: "btn btn-default" %>
+    <%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete, class: "btn btn-default" %></p>
 <% end %>
 <br>
 <%= link_to "Back To Characters", story_characters_path(@character.story) %>
