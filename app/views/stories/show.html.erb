@@ -4,7 +4,7 @@
 </div>
 
 <% if current_user.id == @story.user_id.to_i %>
-    <p><b><%= link_to "Add A Character", new_story_character_path(@story), class: "btn btn-default" %></b></p>
+    <p><b><%= link_to "Add A Character", new_story_character_path(@story), class: "btn btn-primary" %></b></p>
 <% end %>
 <br>
 <h4>Genre(s):</h4>

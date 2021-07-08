@@ -1,24 +1,54 @@
 <%= form_for @character do |f| %>
-    <%= f.label :name, "Name: " %>
-    <%= f.text_field :name, placeholder: "What do they go by?" %><br>
-    <%= f.label :world_id, "Setting/World:" %>
-    <%= f.collection_select :world_id, current_user.worlds, :id, :name %><br>
-    <%= f.label :role, "Role: " %>
-    <%= f.select :role, options_for_select([["Main Character"], ["Supporting Character"], ["Tertiary Character"], ["Single Appearance"], ["Mentioned"]]) %><br>
-    <%= f.label :age, "Age: " %>
-    <%= f.number_field :age %><br>
-    <%= f.label :gender, "Gender: " %>
-    <%= f.select :gender, options_for_select([["Female"], ["Male"], ["Non-Binary"], ["Other"]]) %><br>
-    <%= f.label :species, "Species: " %>
-    <%= f.text_field :species, placeholder: "Used for Fantasy/Sci-Fi" %><br>
-    <%= f.label :job, "Job: " %>
-    <%= f.text_field :job, placeholder: "What do they do?" %><br>
-    <%= f.label :physical, "Physical Description: " %><br>
-    <%= f.text_area :physical, placeholder: "What do they look like? What do they wear?" %><br>
-    <%= f.label :description, "Personality Description: " %><br>
-    <%= f.text_area :description, placeholder: "How do they carry themselves? How are they perceived by others?" %><br>
-    <%= f.label :motivation, "Motivations: " %><br>
-    <%= f.text_area :motivation, placeholder: "What drives them in your story?" %><br>
+    <div class="form-group">
+        <%= f.label :name, "Name: " %>
+        <%= f.text_field :name, placeholder: "What is their name, nickname or alias?", class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :world_id, "Setting/World:" %>
+        <%= f.collection_select :world_id, current_user.worlds, :id, :name, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :role, "Role: " %>
+        <%= f.select :role, options_for_select([["Main Character"], ["Supporting Character"], ["Tertiary Character"], ["Single Appearance"], ["Mentioned"]]), class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :age, "Age: " %>
+        <%= f.number_field :age, min:0, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :gender, "Gender: " %>
+        <%= f.select :gender, options_for_select([["Female"], ["Male"], ["Non-Binary"], ["Other"]]), class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :species, "Species: " %>
+        <%= f.text_field :species, placeholder: "Used for Fantasy/Sci-Fi", class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :job, "Job: " %>
+        <%= f.text_field :job, placeholder: "What is their profession, rank, or livelihood?", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :physical, "Physical Description: " %>
+        <%= f.text_area :physical, placeholder: "What do they look like? What do they wear?", class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :description, "Personality Description: " %>
+        <%= f.text_area :description, placeholder: "How do they carry themselves? How are they perceived by others?", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :motivation, "Motivations: " %><br>
+        <%= f.text_area :motivation, placeholder: "What drives them in your story?", class: "form-control" %><br>
+    </div>
+
     <%= f.hidden_field :story_id %>
-    <%= submit_tag "Forge Character" %>
+    <%= submit_tag "Forge Character", class: "btn btn-primary" %>
 <% end %>
