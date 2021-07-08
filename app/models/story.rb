@@ -9,4 +9,12 @@ class Story < ApplicationRecord
     accepts_nested_attributes_for :genres
 
     scope :most_recent, -> {order('created_at DESC')}
+
+    def genres_attributes=(genre_attributes)
+        genre_name = genre_attributes["0"]["name"]
+        unless genre_name.blank?
+            genre = Genre.find_or_create_by(name: genre_name)
+            self.genres << genre
+        end
+    end
 end
