@@ -12,14 +12,22 @@ New to LoreScroll? Let's get started.<br><br>
 <br>
 <div class="content-box">
     <h3>Your Worlds</h3>
-        <% @user.worlds.each do |w| %>
-            <li><%= link_to w.name, world_path(w) %></li><br>
+        <% if @user.worlds.exists? %>
+            <% @user.worlds.each do |w| %>
+                <li><%= link_to w.name, world_path(w) %></li><br>
+            <% end %>
+        <% else %>
+            <p>No Worlds Added</p>
         <% end %>
 </div>
 <br>
 <div class="content-box">
     <h3>Your Stories</h3>
-        <% @user.stories.each do |s| %>
-            <li><%= link_to s.title, story_path(s) %></li><br>
+        <% if @user.stories.exists? %>
+            <% @user.stories.each do |s| %>
+                <li><%= link_to s.title, story_path(s) %></li><br>
+            <% end %>
+        <% else %>
+            <p>No Stories Added</p>
         <% end %>
 </div>
