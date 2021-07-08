@@ -16,7 +16,8 @@
 <% end %>
 <br>
 <div class="content-box">
-    <h3>Your Worlds</h3>
+    <div class="content">
+        <h3>Your Worlds</h3>
         <% if @user.worlds.exists? %>
             <% @user.worlds.each do |w| %>
                 <li><%= link_to w.name, world_path(w) %></li><br>
@@ -24,15 +25,18 @@
         <% else %>
             <p>No Worlds Added</p>
         <% end %>
+    </div>
 </div>
 <br>
 <div class="content-box">
-    <h3>Your Stories</h3>
-        <% if @user.stories.exists? %>
-            <% @user.stories.each do |s| %>
-                <li><%= link_to s.title, story_path(s) %></li><br>
+    <div class="content">
+        <h3>Your Stories</h3>
+            <% if @user.stories.exists? %>
+                <% @user.stories.each do |s| %>
+                    <li><%= link_to s.title, story_path(s) %></li><br>
+                <% end %>
+            <% else %>
+                <p>No Stories Added</p>
             <% end %>
-        <% else %>
-            <p>No Stories Added</p>
-        <% end %>
+    </div>
 </div>
