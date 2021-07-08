@@ -2,13 +2,18 @@
     <h2>Welcome aboard, <%= @user.username %>!</h2>
 </div>
 
-<p>
-This is your Story Quill, where you can create new characters, stories and even worlds!<br><br>
-New to LoreScroll? Let's get started.<br><br>
-1. <%= link_to "Create your world", new_world_path %>, a setting for your story to flourish in.<br> 
-2. <%= link_to "Tell your story", new_story_path %> and leave your audience enraptured.<br>
-3. Fill that story with characters and link them to your worlds.  
-</p>
+<p>This is your Story Quill, where you can create new characters, stories and even worlds!</p>
+
+<% if current_user.worlds.empty? || current_user.stories.empty? %>
+    <p>New to LoreScroll? Let's get started.</p>
+    <ol>
+        <li><%= link_to "Create your world", new_world_path %>, a setting for your story to flourish in.</li> 
+        <li><%= link_to "Tell your story", new_story_path %> and leave your audience enraptured.</li>
+        <li>Fill that story with characters and link them to your worlds.</li>  
+    </ol>
+<% else %>
+    <br>
+<% end %>
 <br>
 <div class="content-box">
     <h3>Your Worlds</h3>
