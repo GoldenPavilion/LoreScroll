@@ -1,9 +1,10 @@
 <div class="title-container">
     <h1><%= @story.title %> Characters</h1>
+    <% if current_user.id == @story.user_id.to_i %>
+        <p><b><%= link_to "Add New Character", new_story_character_path(@story), class: "btn btn-default" %></b></p>
+    <% end %>
 </div>
-<% if current_user.id == @story.user_id.to_i %>
-    <p><b><%= link_to "Add New Character", new_story_character_path(@story), class: "btn btn-default" %></b></p>
-<% end %>
+
 <% flash.each do |type, msg| %>
     <div>
         <b><%= msg %></b>
