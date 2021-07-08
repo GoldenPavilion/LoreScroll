@@ -1,15 +1,30 @@
 <%= form_for @story do |f| %>
-    <%= f.label :title, "Title: " %><br>
-    <%= f.text_field :title %><br><br>
-    <%= f.label :medium, "Medium: " %><br>
-    <%= f.select :medium, options_for_select([["Novel"], ["Tabletop RPG"], ["Screenplay"], ["Video Game"], ["Podcast"], ["Play"], ["Comic Book"], ["Other"]]) %><br><br>
-    <%= f.label :genre, "Genres (Please Select At Least One): " %><br>
-    <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name %><br><br>
+    <div class="form-group">
+        <%= f.label :title, "Title: " %><br>
+        <%= f.text_field :title, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :medium, "Medium: " %><br>
+        <%= f.select :medium, options_for_select([["Novel"], ["Tabletop RPG"], ["Screenplay"], ["Video Game"], ["Podcast"], ["Play"], ["Comic Book"], ["Other"]]), class: "form-control" %><br>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :genre, "Genres: " %><br>
+        <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name, class: "form-control" %><br>
+    </div>
+
     ...or Add A New Genre:<br>
     <%= f.fields_for :genres, @story.genres.build do |genre_fields| %>
-        <%= genre_fields.text_field :name %>
-    <% end %><br><br>    
-    <%= f.label :summary, "Summary: " %><br>
-    <%= f.text_area :summary %><br><br>
-    <%= submit_tag "Create Story" %>
+        <div class="form-group">
+            <%= genre_fields.text_field :name, class: "form-control" %>
+        </div>
+    <% end %><br>
+    
+    <div class="form-group">
+        <%= f.label :summary, "Summary: " %><br>
+        <%= f.text_area :summary, class: "form-control" %><br>
+    </div>
+
+    <%= submit_tag "Create Story", class: "btn btn-primary" %>
 <% end %>
