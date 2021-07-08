@@ -1,9 +1,18 @@
 <%= form_for @world do |f| %>
-    <%= f.label :name, "Setting Name: " %><br>
-    <%= f.text_field :name %><br><br>
-    <%= f.label :scale, "Scale: " %>
-    <%= f.select :scale, options_for_select([["Multiverse"], ["Universe"], ["Galaxy"], ["Planet"], ["Continent"], ["Nation"], ["Region"], ["City"], ["Town"], ["Building"], ["Vehicle"], ["Other"]]) %><br><br>
-    <%= f.label :description, "Description:" %><br>
-    <%= f.text_area :description %><br><br>
-    <%= submit_tag "Forge Your World" %>
+    <div class="form-group">
+        <%= f.label :name, "Setting Name: " %><br>
+        <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :scale, "Scale: " %>
+        <%= f.select :scale, options_for_select([["Multiverse"], ["Universe"], ["Galaxy"], ["Planet"], ["Continent"], ["Nation"], ["Region"], ["City"], ["Town"], ["Building"], ["Vehicle"], ["Other"]]), class: "form-control" %><br>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :description, "Description:" %><br>
+        <%= f.text_area :description, class: "form-control" %><br>
+    </div>
+
+    <%= submit_tag "Forge Your World", class: "btn btn-primary" %>
 <% end %>
