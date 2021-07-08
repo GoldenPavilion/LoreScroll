@@ -6,7 +6,7 @@
 
     <div class="form-group">
         <%= f.label :scale, "Scale: " %>
-        <%= f.select :scale, options_for_select([["Multiverse"], ["Universe"], ["Galaxy"], ["Planet"], ["Continent"], ["Nation"], ["Region"], ["City"], ["Town"], ["Building"], ["Vehicle"], ["Other"]]), class: "form-control" %><br>
+        <%= f.select :scale, options_for_select([["Multiverse"], ["Universe"], ["Galaxy"], ["Planet"], ["Continent"], ["Nation"], ["Region"], ["City"], ["Town"], ["Building"], ["Vehicle"], ["Other"]], :selected=>@world.scale), class: "form-control" %><br>
     </div>
 
     <div class="form-group">

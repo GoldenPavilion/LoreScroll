@@ -11,7 +11,7 @@
     
     <div class="form-group">
         <%= f.label :role, "Role: " %>
-        <%= f.select :role, options_for_select([["Main Character"], ["Supporting Character"], ["Tertiary Character"], ["Single Appearance"], ["Mentioned"]]), class: "form-control" %>
+        <%= f.select :role, options_for_select([["Main Character"], ["Supporting Character"], ["Tertiary Character"], ["Single Appearance"], ["Mentioned"]], :selected=>@character.role), class: "form-control" %>
     </div>
     
     <div class="form-group">
@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <%= f.label :gender, "Gender: " %>
-        <%= f.select :gender, options_for_select([["Female"], ["Male"], ["Non-Binary"], ["Other"]]), class: "form-control" %>
+        <%= f.select :gender, options_for_select([["Female"], ["Male"], ["Non-Binary"], ["Other"]], :selected=>@character.gender), class: "form-control" %>
     </div>
 
     <div class="form-group">
@@ -45,8 +45,8 @@
     </div>
 
     <div class="form-group">
-        <%= f.label :motivation, "Motivations: " %><br>
-        <%= f.text_area :motivation, placeholder: "What drives them in your story?", class: "form-control" %><br>
+        <%= f.label :motivation, "Motivations: " %>
+        <%= f.text_area :motivation, placeholder: "What drives them in your story?", class: "form-control" %>
     </div>
 
     <%= f.hidden_field :story_id %>
