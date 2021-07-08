@@ -3,14 +3,22 @@
 </div>    
 <p><b>Scale:</b> <%= @world.scale %></p>
 <p><b>Characters of <%= @world.name %>: </b></p>
-<% @world.characters.order_by_name.each do |c| %>
-    <ul>
-        <li><%= link_to c.name, story_character_path(c.story, c) %></li>
-    </ul>
+<% if @world.characters.empty? %>
+    <p>No Characters Added to Associated Stories</p>
+<% else %>
+    <% @world.characters.order_by_name.each do |c| %>
+        <ul>
+            <li><%= link_to c.name, story_character_path(c.story, c) %></li>
+        </ul>
+    <% end %>
 <% end %>
 <p><b>Description:</b></p> 
-<p><%= @world.description %></p><br>
-
+<% if @world.description.empty? %>
+    <p>No Summary Added</p>
+<% else %>
+    <p><%= @world.description %></p>
+<% end %>
+<br>
 <% if current_user.id == @world.user_id.to_i %>
     <p><%= link_to "Edit World", edit_world_path(@world), class: "btn btn-default" %>
     <%= link_to "Delete World", world_path(@world), method: :delete, class: "btn btn-default" %></p>
