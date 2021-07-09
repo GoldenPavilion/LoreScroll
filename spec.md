@@ -1,7 +1,7 @@
 Specs:
 
 - [X] Using Ruby on Rails for the project --- Set up project using rails new LoreScroll
-- [ ] Include at least one has_many relationship (x has_many y; e.g. User has_many Recipes)
+- [X] Include at least one has_many relationship (x has_many y; e.g. User has_many Recipes) --- User has_many stories, has_many worlds. World has_many characers. Story has_many characters, has_many story_genres. Genre has_many story_genres.   
 - [ ] Include at least one belongs_to relationship (x belongs_to y; e.g. Post belongs_to User)
 - [ ] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe   has_many Items through Ingredients)
 - [ ] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
