@@ -8,5 +8,5 @@ class Character < ApplicationRecord
 
     scope :order_by_name, -> {order('name ASC')}
     scope :order_by_role, -> {order(:role)}
-    scope :main_characters, -> {where(role: "Main Character").limit(8).order('name asc')}
+    scope :main_characters, -> {where(role: "Main Character").limit(8).order('name ASC')}
 end
