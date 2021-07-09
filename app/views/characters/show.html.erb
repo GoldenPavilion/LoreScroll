@@ -5,19 +5,49 @@
 
 <p><b>Setting: </b><%= @character.world.name %></p>
 
-<p><b>Age: </b><%= @character.age %></p>
-<p><b>Gender: </b><%= @character.gender %></p>
-<p><b>Species: </b><%= @character.species %></p>
-<p><b>Job: </b><%= @character.job %></p><br>
+<p><b>Age: </b>
+<% if @character.age.nil? %>
+    N/A
+<% else %>
+    <%= @character.age %>
+<% end %></p>
 
+<p><b>Gender: </b><%= @character.gender %></p>
+
+<p><b>Species: </b>
+<% if @character.species.empty? %>
+    N/A
+<% else %>
+    <%= @character.species %>
+<% end %></p>
+
+<p><b>Job: </b>
+<% if @character.job.empty? %>
+    N/A
+<% else %>
+    <%= @character.job %></p>
+<% end %></p>
+<br>
 <p><b>Physical Description: </b></p>
-<p><%= @character.physical %></p><br>
+<% if @character.physical.empty? %>
+    <p>No Physical Description</p><br>
+<% else %>
+    <p><%= @character.physical %></p><br>
+<% end %>
 
 <p><b>Personality Description: </b></p>
-<p><%= @character.description %></p><br>
+<% if @character.description.empty? %>
+    <p>No Personality Description</p><br>
+<% else %>
+    <p><%= @character.description %></p><br>
+<% end %>
 
 <p><b>Motivation: </b></p>
-<p><%= @character.motivation %></p><br>
+<% if @character.motivation.empty? %>
+    <p>No Motivation Added</p><br>
+<% else %>
+    <p><%= @character.motivation %></p><br>
+<% end %>
 
 <% if current_user.id == @character.story.user_id.to_i %>
     <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character), class: "btn btn-default" %>

@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
         @character = Character.new(character_params)
         if current_user.stories.ids.include?(params[:character][:story_id].to_i)
             if @character.save
-                redirect_to story_characters_path(@character.story)
+                redirect_to story_character_path(@character.story, @character)
             else
                 render 'new'
             end
