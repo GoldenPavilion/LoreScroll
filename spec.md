@@ -15,8 +15,8 @@ Specs:
 - [X] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item) --- User validates if username, author_name and email are present. It also validates if username and email are unique. World validates that name is present and is unique for that user. For example, two different users could have a World called "Middle Earth", but the same user could not have two worlds called "Middle Earth". Story validates that a title is present and is unique for that user. Character validates that a name, world_id and story_id are present on creation and that the name is unique to that story. 
 - [X] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes) --- World includes scope for most_recent. Story includes scope for most_recent. Character includes scopes for order_by_name, order_by_role and main_characters. 
 - [X] Include signup (how e.g. Devise) --- User can sign up for new account by navigating to /users/new.
-- [ ] Include login (how e.g. Devise)
-- [ ] Include logout (how e.g. Devise)
+- [X] Include login (how e.g. Devise) --- User can login to their existing account by navigating to /signin. 
+- [X] Include logout (how e.g. Devise) --- User can log out by clicking on the "Log Out" button in the navigation bar - this is routed to /signout, which destroys the current session.
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
