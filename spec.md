@@ -12,8 +12,7 @@ Specs:
 --- World has many stories and Story has many worlds, through characters. Story has many genres and Genre has many stories, through story_genres. 
 - [X] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 --- The Character model, whose migration is the join table for World and Story, has a number of submittable attributes, including name, age, role, gender, species, job, motivation, etc. 
-- [X] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
---- 
+- [X] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item) --- User validates if username, author_name and email are present. It also validates if username and email are unique. World validates that name is present and is unique for that user. For example, two different users could have a World called "Middle Earth", but the same user could not have two worlds called "Middle Earth". Story validates that a title is present and is unique for that user. Character validates that a name, world_id and story_id are present on creation and that the name is unique to that story. 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [ ] Include signup (how e.g. Devise)
 - [ ] Include login (how e.g. Devise)
