@@ -14,7 +14,7 @@ Specs:
 --- The Character model, whose migration is the join table for World and Story, has a number of submittable attributes, including name, age, role, gender, species, job, motivation, etc. 
 - [X] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item) --- User validates if username, author_name and email are present. It also validates if username and email are unique. World validates that name is present and is unique for that user. For example, two different users could have a World called "Middle Earth", but the same user could not have two worlds called "Middle Earth". Story validates that a title is present and is unique for that user. Character validates that a name, world_id and story_id are present on creation and that the name is unique to that story. 
 - [X] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes) --- World includes scope for most_recent. Story includes scope for most_recent. Character includes scopes for order_by_name, order_by_role and main_characters. 
-- [ ] Include signup (how e.g. Devise)
+- [X] Include signup (how e.g. Devise) --- User can sign up for new account by navigating to /users/new.
 - [ ] Include login (how e.g. Devise)
 - [ ] Include logout (how e.g. Devise)
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
