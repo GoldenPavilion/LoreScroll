@@ -50,6 +50,11 @@ class CharactersController < ApplicationController
         redirect_to story_characters_path(@character.story)
     end
 
+    def main_characters
+        @characters = Character.main_characters
+        render :index
+    end
+
     private
 
     def character_params
