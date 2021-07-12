@@ -15,5 +15,4 @@ Rails.application.routes.draw do
   resources :stories, only: [:show] do
     resources :characters, only: [:new, :index, :show, :edit, :destroy]
   end
-  resources :characters
 end
