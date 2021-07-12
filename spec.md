@@ -17,7 +17,7 @@ Specs:
 - [X] Include signup (how e.g. Devise) --- User can sign up for new account by navigating to /users/new.
 - [X] Include login (how e.g. Devise) --- User can login to their existing account by navigating to /signin. 
 - [X] Include logout (how e.g. Devise) --- User can log out by clicking on the "Log Out" button in the navigation bar - this is routed to /signout, which destroys the current session.
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [X] Include third party signup/login (how e.g. Devise/OmniAuth) --- User can signup or login using Google Omniauth, which is linked on the welcome page. 
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
