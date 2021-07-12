@@ -19,7 +19,7 @@ Specs:
 - [X] Include logout (how e.g. Devise) --- User can log out by clicking on the "Log Out" button in the navigation bar - this is routed to /signout, which destroys the current session.
 - [X] Include third party signup/login (how e.g. Devise/OmniAuth) --- User can signup or login using Google Omniauth, which is linked on the welcome page. Uses the SessionsController#google_auth method, along with the User.google_create model method to log user in with Google Credentials. 
 - [X] Include nested resource show or index (URL e.g. users/2/recipes) --- Characters are nested within Stories in both show and index routes. Ex: /stories/:id/characters will take the user to a list of all the characters associated with a specific story - while /stories/:id/characters/:id will display information about an individual character.  
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [X] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) - User can add a character to a story by navigating to /stories/:id/characters/new. A hidden field in the new characters form automatically associates the story_id of the parent Story. 
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
