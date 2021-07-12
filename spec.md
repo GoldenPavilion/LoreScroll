@@ -25,6 +25,6 @@ Specs:
 Confirm:
 
 - [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
+- [X] Limited logic in controllers --- Created current_user, logged_in? and require_login methods in ApplicationController. current_user checks to verify that the User matches the User of the session. logged_in? ensures that current_user is true, verifying that the User is logged in. require_login redirect the user back to the signin path if they aren't logged in. Before Actions in StoriesController, CharactersController and WorldsController trigger the require_login method to make sure users don't have access to data unless they are logged in. Also built out individual created_by_user private methods in each controller, that verify the id of the user. This is also triggered by a Before Action, preventing users from being able to edit the data of other users.    
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
