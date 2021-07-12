@@ -16,5 +16,9 @@
 <% end %>
 <br>
 <% @characters.each do |c| %>
-    <li><b><%= link_to c.name, story_character_path(c.story, c) %></b> (<%= c.role %>)</li>
+    <li><b><%= link_to c.name, story_character_path(c.story, c) %></b> ( <%= c.role %>
+        <% if !params[:story_id] %>
+           in <%= c.story.title %>
+        <% end %>)
+    </li>
 <% end %>
