@@ -24,16 +24,10 @@
 ---Changed associations to better fit new design flow. 
 ---Updated views to function with new associations
 
-
-
-
-ON RETURN
----Nested forms so user can add new world or story when creating a character
----Fix Duplication of data presentation
----Scoping
----OmniAuth 
----Add validation errors 
-
-Questions for Dustin:
+TODO:
+--- Add a views helper for conditionals within views?
+--- Add a Scope URL?
+--- Double check app DRYness.
+--- Record Video Demo.
 
 
