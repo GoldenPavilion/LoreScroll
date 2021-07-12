@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   delete '/signout' => 'sessions#destroy'
 
   get '/auth/google_oauth2/callback' => 'sessions#google_auth' 
+  get '/characters/main_characters' => 'characters#main_characters'
 
   resources :worlds
   resources :stories
