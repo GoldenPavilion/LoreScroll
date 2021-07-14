@@ -6,27 +6,15 @@
 <p><b>Setting: </b><%= @character.world.name %></p>
 
 <p><b>Age: </b>
-<% if @character.age.nil? %>
-    N/A
-<% else %>
-    <%= @character.age %>
-<% end %></p>
+<%= field_completed?(@character, :age, :nil?) %>
 
 <p><b>Gender: </b><%= @character.gender %></p>
 
 <p><b>Species: </b>
-<% if @character.species.empty? %>
-    N/A
-<% else %>
-    <%= @character.species %>
-<% end %></p>
+<%= field_completed?(@character, :species, :empty?) %>
 
 <p><b>Job: </b>
-<% if @character.job.empty? %>
-    N/A
-<% else %>
-    <%= @character.job %></p>
-<% end %></p>
+<%= field_completed?(@character, :job, :empty?) %>
 <br>
 <p><b>Physical Description: </b></p>
 <% if @character.physical.empty? %>

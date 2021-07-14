@@ -18,4 +18,13 @@ class ApplicationController < ActionController::Base
             redirect_to signin_path
         end
     end
+
+    def authorize_to_edit(klass, association = nil)
+        obj = klass.find_by(id: params[:id])
+        obj_user_id = klass == Character ? obj.send(association).user_id : obj.user_id
+        unless obj_user_id.to_i == current_user.id
+            flash[:notify] = "You cannot edit an object you did not create."
+            redirect_to klass == World ? worlds_path : klass == Character ? story_characters_path(obj.send(association)) : stories_path 
+        end
+    end
 end

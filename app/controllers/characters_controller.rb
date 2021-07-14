@@ -1,6 +1,9 @@
 class CharactersController < ApplicationController
     before_action :require_login
-    before_action :created_by_user, only: [:edit, :update]
+    before_action only: [:edit, :update] do
+        authorize_to_edit(Character, :story)
+    end
+    #before_action :created_by_user, only: [:edit, :update]
 
     def index
         if params[:story_id]
@@ -61,12 +64,12 @@ class CharactersController < ApplicationController
         params.require(:character).permit(:name, :role, :age, :gender, :species, :job, :physical, :description, :motivation, :world_id, :story_id)
     end
 
-    def created_by_user
-        @character = Character.find_by(id: params[:id])
-        unless @character.story.user_id.to_i == current_user.id
-            flash[:notify] = "You cannot edit a character you did not create."
-            redirect_to story_characters_path(@character.story)
-        end
-    end
+   # def created_by_user
+        #@character = Character.find_by(id: params[:id])
+        #unless @character.story.user_id.to_i == current_user.id
+            #flash[:notify] = "You cannot edit a character you did not create."
+            #redirect_to story_characters_path(@character.story)
+        #end
+    #end
     
 end
