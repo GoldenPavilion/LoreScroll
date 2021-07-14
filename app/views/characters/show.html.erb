@@ -5,37 +5,23 @@
 
 <p><b>Setting: </b><%= @character.world.name %></p>
 
-<p><b>Age: </b>
-<%= field_completed?(@character, :age, :nil?) %>
+<p><b>Age: </b><%= field_completed?(@character, :age, :nil?) %></p>
 
 <p><b>Gender: </b><%= @character.gender %></p>
 
-<p><b>Species: </b>
-<%= field_completed?(@character, :species, :empty?) %>
+<p><b>Species: </b><%= field_completed?(@character, :species, :empty?) %></p>
 
-<p><b>Job: </b>
-<%= field_completed?(@character, :job, :empty?) %>
+<p><b>Job: </b><%= field_completed?(@character, :job, :empty?) %></p>
+
 <br>
 <p><b>Physical Description: </b></p>
-<% if @character.physical.empty? %>
-    <p>No Physical Description</p><br>
-<% else %>
-    <p><%= @character.physical %></p><br>
-<% end %>
+<%= field_completed?(@character, :physical, :empty?) %>
 
 <p><b>Personality Description: </b></p>
-<% if @character.description.empty? %>
-    <p>No Personality Description</p><br>
-<% else %>
-    <p><%= @character.description %></p><br>
-<% end %>
+<%= field_completed?(@character, :description, :empty?) %>
 
 <p><b>Motivation: </b></p>
-<% if @character.motivation.empty? %>
-    <p>No Motivation Added</p><br>
-<% else %>
-    <p><%= @character.motivation %></p><br>
-<% end %>
+<%= field_completed?(@character, :motivation, :empty?) %>
 
 <% if current_user.id == @character.story.user_id.to_i %>
     <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character), class: "btn btn-default" %>
