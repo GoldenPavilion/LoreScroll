@@ -1,5 +1,9 @@
 <div class="title-container">
     <h1><%= @world.name %></h1>
+    <% if current_user.id == @world.user_id.to_i %>
+        <p><%= link_to "Edit World", edit_world_path(@world), class: "btn btn-default" %>
+        <%= link_to "Delete World", world_path(@world), method: :delete, class: "btn btn-default" %></p>
+    <% end %>
 </div>    
 <p><b>Scale:</b> <%= @world.scale %></p>
 <p><b>Characters of <%= @world.name %>: </b></p>
@@ -13,13 +17,4 @@
     <% end %>
 <% end %>
 <p><b>Description:</b></p> 
-<% if @world.description.empty? %>
-    <p>No Summary Added</p>
-<% else %>
-    <p><%= @world.description %></p>
-<% end %>
-<br>
-<% if current_user.id == @world.user_id.to_i %>
-    <p><%= link_to "Edit World", edit_world_path(@world), class: "btn btn-default" %>
-    <%= link_to "Delete World", world_path(@world), method: :delete, class: "btn btn-default" %></p>
-<% end %>
+<i><%= field_completed?(@world, :description, :empty?) %></i>
