@@ -8,7 +8,7 @@
 <p><b>Scale:</b> <%= @world.scale %></p>
 <p><b>Characters of <%= @world.name %>: </b></p>
 <% if @world.characters.empty? %>
-    <p>No Characters Added to Associated Stories</p>
+    <p><i>No Characters Added to Associated Stories</i></p>
 <% else %>
     <% @world.characters.order_by_name.each do |c| %>
         <ul>

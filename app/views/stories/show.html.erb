@@ -14,7 +14,7 @@
 <br>
 <h4>Genre(s):</h4>
 <% if @story.genres.empty? %>
-    <p>No Genres Added</p>
+    <p><i>No Genres Added</i></p>
 <% else %>
     <% @story.genres.each do |g| %>
         <ul>
@@ -25,7 +25,7 @@
 <br>
 <h4>Setting(s):</h4>
 <% if @story.worlds.empty? %>
-    <p>No Settings Established</p>
+    <p><i>No Settings Established</i></p>
 <% else %>
     <% @story.worlds.each do |w| %>
         <%= link_to w.name, world_path(w) %><br>
@@ -38,7 +38,7 @@
         <%= link_to c.name, story_character_path(c.story, c) %><br>
     <% end %>
     <% if @story.characters.empty? %>
-        <%= "You Have No Characters" %>
+        <i><%= "You Have No Characters" %></i>
     <% else %>
         <%= link_to "...See More Characters", story_characters_path(@story)%>
     <% end %>
