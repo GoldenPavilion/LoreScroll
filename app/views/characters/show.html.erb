@@ -1,18 +1,18 @@
 <div class="title-container">
     <h1><%= @character.name %></h1>
-    <h5><%= @character.role %> in <%= @character.story.title %></h5>
+    <% if current_user.id == @character.story.user_id.to_i %>
+        <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character), class: "btn btn-default" %>
+        <%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete, class: "btn btn-default" %></p>
+    <% end %>
 </div>
 
+<h5><%= @character.role %> in <%= @character.story.title %></h5>
+<br>
 <p><b>Setting: </b><%= @character.world.name %></p>
-
 <p><b>Age: </b><%= field_completed?(@character, :age, :nil?) %></p>
-
-<p><b>Gender: </b><%= @character.gender %></p>
-
+<p><b>Gender: </b></p><%= @character.gender %></p>
 <p><b>Species: </b><%= field_completed?(@character, :species, :empty?) %></p>
-
 <p><b>Job: </b><%= field_completed?(@character, :job, :empty?) %></p>
-
 <br>
 <p><b>Physical Description: </b></p>
 <%= field_completed?(@character, :physical, :empty?) %>
@@ -22,10 +22,5 @@
 
 <p><b>Motivation: </b></p>
 <%= field_completed?(@character, :motivation, :empty?) %>
-
-<% if current_user.id == @character.story.user_id.to_i %>
-    <p><%= link_to "Edit Character", edit_story_character_path(@character.story, @character), class: "btn btn-default" %>
-    <%= link_to "Delete Character", story_character_path(@character.story, @character), method: :delete, class: "btn btn-default" %></p>
-<% end %>
 <br>
 <%= link_to "Back To Characters", story_characters_path(@character.story) %>
