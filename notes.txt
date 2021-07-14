@@ -26,7 +26,6 @@
 
 TODO:
 --- Add a views helper for conditionals within views?
---- Add a Scope URL?
 --- Double check app DRYness.
 --- Record Video Demo.
 
