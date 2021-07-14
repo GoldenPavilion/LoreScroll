@@ -3,7 +3,6 @@ class WorldsController < ApplicationController
     before_action only: [:edit, :update] do
         authorize_to_edit(World)
     end
-    #before_action :created_by_user, only: [:edit, :update]
 
     def index
         @worlds = World.most_recent
@@ -49,11 +48,4 @@ class WorldsController < ApplicationController
         params.require(:world).permit(:name, :scale, :description, :user_id)
     end
 
-    #def created_by_user
-        #@world = World.find_by(id: params[:id])
-        #unless @world.user_id.to_i == current_user.id
-            #flash[:notify] = "You cannot edit a world you did not create."
-            #redirect_to worlds_path
-        #end
-    #end
 end
