@@ -16,11 +16,11 @@
 <br>
 <p><b>Physical Description: </b></p>
 <%= field_completed?(@character, :physical, :empty?) %>
-
+<br><br>
 <p><b>Personality Description: </b></p>
 <%= field_completed?(@character, :description, :empty?) %>
-
+<br><br>
 <p><b>Motivation: </b></p>
 <%= field_completed?(@character, :motivation, :empty?) %>
-<br>
+<br><br>
 <%= link_to "Back To Characters", story_characters_path(@character.story) %>
