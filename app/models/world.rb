@@ -6,4 +6,5 @@ class World < ApplicationRecord
     has_many :stories, through: :characters
 
     scope :most_recent, -> {order('created_at DESC')}
+    scope :search, -> (search){where('name LIKE?', "%#{search}%")}
 end

@@ -5,7 +5,12 @@ class WorldsController < ApplicationController
     end
 
     def index
-        @worlds = World.most_recent
+        if params[:search]
+            @worlds = World.search(params[:search]).most_recent
+        else    
+            @worlds = World.most_recent
+        end
+
     end
 
     def new

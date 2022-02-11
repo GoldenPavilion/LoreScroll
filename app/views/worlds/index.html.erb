@@ -9,6 +9,12 @@
     </div>
 <% end %>
 
+<%= form_tag '/worlds', method: :get do %>
+    <label>Search: </label>
+    <input type="text" id="search" name="search">
+    <input type="submit" value="Submit">
+<% end %>
+<br>
 <% @worlds.each do |w| %>
     <p><%= link_to w.name, world_path(w) %><br>
     Drafted by <%= w.user.author_name %> on <%= w.created_at.strftime("%B %e, 20%y") %>
